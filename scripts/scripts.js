@@ -5,6 +5,7 @@ import {
   decorateButtons,
   decorateIcons,
   decorateBlocks,
+  decorateBlock,
   decorateTemplateAndTheme,
   getMetadata,
   waitForFirstImage,
@@ -89,6 +90,17 @@ function autolinkModals(doc) {
   });
 }
 
+function buildFragments(main) {
+  main.querySelectorAll('[href]').forEach((a) => {
+    const url = new URL(a.href);
+    if (url.pathname.includes('/fragments/')) {
+      const block = buildBlock('fragment', url.pathname);
+      // replace the link with the fragment
+      a.replaceWith(block);
+      decorateBlock(block);
+    }
+  });
+}
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -96,6 +108,7 @@ function autolinkModals(doc) {
 function buildAutoBlocks(main) {
   try {
     if (!main.querySelector('.hero')) buildHeroBlock(main);
+    buildFragments(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
