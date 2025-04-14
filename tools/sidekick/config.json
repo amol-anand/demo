@@ -23,7 +23,7 @@
       ],
       "experience": "dialog",
       "icon": "https://main--demo--amol-anand.aem.live/.da/pallete.png",
-      "path": "/tools/sidekick/palette/palette.html"
+      "path": "/tools/palette/palette.html"
     },
     {
         "id": "fragments",
