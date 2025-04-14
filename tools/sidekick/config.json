@@ -65,7 +65,7 @@
         ],
         "experience": "dialog",
         "icon": "https://main--demo--amol-anand.aem.live/.da/tagger.png",
-        "path": "/tools/sidekick/tagger/tagger.html"
+        "path": "/tools/tagger/tagger.html"
     },
     {
         "id": "review",
