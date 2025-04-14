@@ -12,20 +12,6 @@
       "url": "/tools/sidekick/library/library.html"
     },
     {
-      "id": "aemcs-assetpicker",
-      "title": "AEM CS Asset Picker",
-      "environments": [
-          "edit"
-      ],
-      "daLibrary": true,
-      "includePaths": [
-          "DA"
-      ],
-      "experience": "fullsize-dialog",
-      "icon": "https://da.live/blocks/edit/img/Smock_Images_18_N.svg",
-      "path": "/tools/aemcs-assetpicker/assets.html"
-    },
-    {
       "id": "palette",
       "title": "Color palette",
       "environments": [
@@ -80,26 +66,6 @@
         "experience": "dialog",
         "icon": "https://main--demo--amol-anand.aem.live/.da/tagger.png",
         "path": "/tools/sidekick/tagger/tagger.html"
-    },
-    {
-        "id": "showblocks",
-        "title": "Blocks",
-        "environments": [
-            "dev",
-            "preview",
-            "live"
-        ],
-        "event": "showblocks"
-    },
-    {
-        "id": "showsections",
-        "title": "Sections",
-        "environments": [
-            "dev",
-            "preview",
-            "live"
-        ],
-        "event": "showsections"
     },
     {
         "id": "review",
