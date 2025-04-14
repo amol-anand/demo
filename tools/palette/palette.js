@@ -1,7 +1,7 @@
 // import { createTag } from '../../../aemedge/scripts/utils.js';
 import { LitElement, html, css } from 'https://da.live/deps/lit/lit-all.min.js';
 import DA_SDK from 'https://da.live/nx/utils/sdk.js';
-import { getPalette } from '../../../aemedge/scripts/tags.js';
+import { getPalette } from '../../scripts/tags.js';
 
 class PaletteElement extends LitElement {
   static properties = {
