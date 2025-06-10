@@ -18,6 +18,47 @@ import {
   toCamelCase,
 } from './aem.js';
 
+function sidekickListener() {
+  const interceptPublishButton = (sk) => {
+    if (!sk) return;
+    const pluginActionBar = sk.shadowRoot.querySelector('plugin-action-bar').shadowRoot;
+    // Find the publish button and intercept its click
+    const publishButton = pluginActionBar.querySelector('sk-action-button.publish');
+    if (publishButton) {
+      publishButton.addEventListener('click', (e) => {
+        // Show confirmation dialog
+        const shouldProceed = window.confirm('Are you sure you want to publish this content?');
+        if (!shouldProceed) {
+          alert('Publish action cancelled!');
+          e.preventDefault();
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+          return false;
+        }
+        // If user confirms, let the publish proceed normally
+        return true;
+      }, { capture: true }); // Use capture to intercept before the sidekick handles it
+    } else {
+      console.log('publish button not found');
+      // wait for 1 second and try again
+      setTimeout(() => {
+        interceptPublishButton(sk);
+      }, 1000);
+    }
+  };
+
+  const sk = document.querySelector('aem-sidekick');
+  if (sk) {
+    interceptPublishButton(sk);
+  } else {
+    document.addEventListener('sidekick-ready', () => {
+      // sidekick now loaded
+      const sidekick = document.querySelector('aem-sidekick');
+      interceptPublishButton(sidekick);
+    }, { once: true });
+  }
+}
+
 /**
  * Moves all the attributes from a given elmenet to another given element.
  * @param {Element} from the element to copy attributes from
@@ -229,6 +270,7 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
+  sidekickListener();
 }
 
 /**
