@@ -7,16 +7,23 @@ import isExternalMedia from './external-media.js';
  * Create Media Browser Module
  * Handles displaying and managing media in grid and list views
  */
-export default function createMediaBrowser(container) {
+export default function createMediaBrowser(container, context = null) {
   const state = {
     container,
     media: [],
     filteredMedia: [],
     currentView: 'grid',
-    currentSort: 'name',
-    currentFilter: { types: ['image', 'video', 'document'], search: '' },
-    eventListeners: {},
+    currentSort: 'discovery',
+    currentFilter: {
+      types: ['image', 'video', 'document'],
+      isExternal: undefined,
+      usedOnPage: false,
+      missingAlt: undefined,
+      search: '',
+    },
     isInitialLoad: true,
+    context: context || {},
+    eventListeners: {},
   };
 
   const api = {
@@ -133,6 +140,24 @@ export default function createMediaBrowser(container) {
   function applyFiltersAndSort() {
     let filtered = [...state.media];
 
+    // Use home page path if we're on the media library page
+    let pagePathForFiltering = state.context.currentPagePath;
+    if (pagePathForFiltering && pagePathForFiltering.includes('tools/media-library/media-library')) {
+      const homePagePath = `/${state.context.org}/${state.context.repo}/index.html`;
+      console.log('[Media Browser] On media library page, using home page path for filtering:', homePagePath);
+      pagePathForFiltering = homePagePath;
+    } else if (pagePathForFiltering && !pagePathForFiltering.startsWith(`/${state.context.org}/${state.context.repo}`)) {
+      // If path doesn't start with full org/repo structure, construct full path
+      const fullPath = `/${state.context.org}/${state.context.repo}${pagePathForFiltering}.html`;
+      console.log('[Media Browser] Constructing full path for filtering:', pagePathForFiltering, '→', fullPath);
+      pagePathForFiltering = fullPath;
+    } else if (pagePathForFiltering && !pagePathForFiltering.includes('.html')) {
+      // If path doesn't end with .html, add it
+      const fullPath = `${pagePathForFiltering}.html`;
+      console.log('[Media Browser] Adding .html extension for filtering:', pagePathForFiltering, '→', fullPath);
+      pagePathForFiltering = fullPath;
+    }
+
     if (state.currentFilter.types && state.currentFilter.types.length > 0) {
       filtered = filtered.filter((media) => state.currentFilter.types.includes(media.type));
     }
@@ -142,7 +167,7 @@ export default function createMediaBrowser(container) {
     }
 
     if (state.currentFilter.usedOnPage
-      && state.currentFilter.missingAlt && window.currentPagePath) {
+      && state.currentFilter.missingAlt && pagePathForFiltering) {
       filtered = filtered.filter((media) => {
         if (media.type !== 'image') return false;
         if (media.alt && media.alt.trim() !== '' && media.alt !== 'Untitled') return false;
@@ -154,11 +179,11 @@ export default function createMediaBrowser(container) {
         } else if (Array.isArray(media.usedIn)) {
           usedInPages = media.usedIn;
         }
-        return usedInPages.includes(window.currentPagePath);
+        return usedInPages.includes(pagePathForFiltering);
       });
     } else if (state.currentFilter.missingAlt) {
       filtered = filtered.filter((media) => media.type === 'image' && (!media.alt || media.alt.trim() === '' || media.alt === 'Untitled'));
-    } else if (state.currentFilter.usedOnPage && window.currentPagePath) {
+    } else if (state.currentFilter.usedOnPage && pagePathForFiltering) {
       filtered = filtered.filter((media) => {
         if (!media.usedIn) return false;
         let usedInPages = [];
@@ -167,7 +192,7 @@ export default function createMediaBrowser(container) {
         } else if (Array.isArray(media.usedIn)) {
           usedInPages = media.usedIn;
         }
-        return usedInPages.includes(window.currentPagePath);
+        return usedInPages.includes(pagePathForFiltering);
       });
     }
 
@@ -446,6 +471,66 @@ export default function createMediaBrowser(container) {
     const internalCount = state.media.filter((a) => a.isExternal === false).length;
     const externalCount = state.media.filter((a) => a.isExternal === true).length;
     const totalCount = state.media.length;
+    const missingAltCount = state.media.filter((a) => {
+      const hasOccurrences = a.occurrences && a.occurrences.length > 0;
+      if (hasOccurrences) {
+        return a.occurrences.some((o) => !o.hasAltText);
+      }
+      return !a.alt || a.alt.trim() === '' || a.alt === 'Untitled Media';
+    }).length;
+
+    // Used on Page counts
+    let usedOnPageCount = '-';
+    let usedInternalCount = '-';
+    let usedExternalCount = '-';
+    let usedMissingAltCount = '-';
+
+    console.log('[Media Browser] Current page path for "Used on Page" metrics:', state.context.currentPagePath);
+
+    // Use home page path if we're on the media library page
+    let pagePathForMetrics = state.context.currentPagePath;
+    if (pagePathForMetrics && pagePathForMetrics.includes('tools/media-library/media-library')) {
+      const homePagePath = `/${state.context.org}/${state.context.repo}/index.html`;
+      console.log('[Media Browser] On media library page, using home page path instead:', homePagePath);
+      pagePathForMetrics = homePagePath;
+    } else if (pagePathForMetrics && !pagePathForMetrics.startsWith(`/${state.context.org}/${state.context.repo}`)) {
+      // If path doesn't start with full org/repo structure, construct full path
+      const fullPath = `/${state.context.org}/${state.context.repo}${pagePathForMetrics}.html`;
+      console.log('[Media Browser] Constructing full path:', pagePathForMetrics, '→', fullPath);
+      pagePathForMetrics = fullPath;
+    } else if (pagePathForMetrics && !pagePathForMetrics.includes('.html')) {
+      // If path doesn't end with .html, add it
+      const fullPath = `${pagePathForMetrics}.html`;
+      console.log('[Media Browser] Adding .html extension:', pagePathForMetrics, '→', fullPath);
+      pagePathForMetrics = fullPath;
+    }
+
+    if (pagePathForMetrics) {
+      const usedOnPage = state.media.filter((a) => {
+        if (!a.usedIn) return false;
+        const usedInPages = typeof a.usedIn === 'string' ? a.usedIn.split(',') : a.usedIn;
+        return usedInPages.includes(pagePathForMetrics);
+      });
+
+      console.log('[Media Browser] Found', usedOnPage.length, 'media items used on page:', pagePathForMetrics);
+      console.log('[Media Browser] Used on page items:', usedOnPage.map((a) => ({ name: a.name, usedIn: a.usedIn })));
+
+      usedOnPageCount = usedOnPage.length;
+      usedInternalCount = usedOnPage.filter((a) => a.isExternal === false).length;
+      usedExternalCount = usedOnPage.filter((a) => a.isExternal === true).length;
+      usedMissingAltCount = usedOnPage.filter((a) => {
+        const hasOccurrences = a.occurrences && a.occurrences.length > 0;
+        if (hasOccurrences) {
+          const pageOccurrences = a.occurrences.filter(
+            (o) => o.pagePath === pagePathForMetrics,
+          );
+          return pageOccurrences.some((o) => !o.hasAltText);
+        }
+        return !a.alt || a.alt.trim() === '' || a.alt === 'Untitled Media';
+      }).length;
+    } else {
+      console.log('[Media Browser] No current page path available for "Used on Page" metrics');
+    }
 
     const setCount = (id, count) => {
       const el = document.getElementById(id);
@@ -457,6 +542,11 @@ export default function createMediaBrowser(container) {
     setCount('internalCount', internalCount);
     setCount('externalCount', externalCount);
     setCount('totalCount', totalCount);
+    setCount('missingAltCount', missingAltCount);
+    setCount('usedOnPageCount', usedOnPageCount);
+    setCount('usedInternalCount', usedInternalCount);
+    setCount('usedExternalCount', usedExternalCount);
+    setCount('usedMissingAltCount', usedMissingAltCount);
   }
 
   function getSelectedMedia() {
