@@ -11,7 +11,7 @@
         "preview",
         "review"
       ],
-      "url": "https://snapshot-update--helix-tools-website--adobe.aem.live/tools/snapshot-admin/palette.html",
+      "url": "https://snapshot-update--helix-labs-website--adobe.aem.live/tools/snapshot-admin/palette.html",
       "isPopover": true,
       "popoverRect": "width:200px; height: 200px",
       "passConfig": true,
