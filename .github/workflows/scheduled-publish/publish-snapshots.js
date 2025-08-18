@@ -6,7 +6,7 @@
  * API Endpoints used:
  * - GET /snapshot/{org}/{site}/{branch} - List all snapshots
  * - POST /snapshot/{org}/{site}/{branch}/{id}?publish=true - Publish a snapshot
- * - POST /snapshot/{org}/{site}/{branch}/{id}/manifest - Update snapshot manifest
+ * - POST /snapshot/{org}/{site}/{branch}/{id} - Update snapshot manifest
  */
 
 // Configuration - org, site, and branch are passed as command-line arguments
@@ -39,7 +39,7 @@ async function main() {
   try {
     // List all snapshots
     console.log('Fetching snapshots...');
-    const snapshotsResponse = await fetch(
+    const snapshotsList = await fetch(
       `${ADMIN_API_BASE}/snapshot/${ORG}/${SITE}/${BRANCH}`,
       {
         method: 'GET',
@@ -50,67 +50,78 @@ async function main() {
       }
     ).then(res => res.json());
     
-    if (!snapshotsResponse.snapshots || !Array.isArray(snapshotsResponse.snapshots)) {
+    if (!snapshotsList.snapshots || !Array.isArray(snapshotsList.snapshots)) {
       console.log('No snapshots found or invalid response format');
       return;
     }
-    
-    console.log(`Found ${snapshotsResponse.snapshots.length} snapshots`);
-    
-    // Filter snapshots with scheduledPublish property
-    const scheduledSnapshots = snapshotsResponse.snapshots.filter(snapshot => {
-      return snapshot.manifest && 
-             snapshot.manifest.metadata && 
-             snapshot.manifest.metadata.scheduledPublish;
-    });
+    console.log(`Found ${snapshotsList.snapshots.length} snapshots`);
+    const scheduledSnapshots = [];
+    // Get the manifest for each snapshot and filter snapshots with scheduledPublish property
+    await Promise.all(snapshotsList.snapshots.map(async (snapshot) => {
+      const manifestResponse = await fetch(
+        `${ADMIN_API_BASE}/snapshot/${ORG}/${SITE}/${BRANCH}/${snapshot}`,
+        {
+          method: 'GET',
+          headers: {
+            'Authorization': `token ${ADMIN_API_TOKEN}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      ).then(res => res.json());
+      if (manifestResponse.manifest && manifestResponse.manifest.metadata && manifestResponse.manifest.metadata.scheduledPublish) {
+        console.log(`Found scheduled snapshot ${snapshot}`);
+        scheduledSnapshots.push(manifestResponse);
+      }
+    }));
     
     console.log(`Found ${scheduledSnapshots.length} snapshots with scheduledPublish property`);
     
     // Check each scheduled snapshot
     for (const snapshot of scheduledSnapshots) {
       const scheduledTime = new Date(snapshot.manifest.metadata.scheduledPublish);
-      console.log(`Snapshot ${snapshot.id}: scheduled for ${scheduledTime.toISOString()}`);
+      console.log(`Snapshot ${snapshot.manifest.id}: scheduled for ${scheduledTime.toISOString()}`);
       
-      // Check if scheduled time is within the last 5 minutes or matches current time
-      if (scheduledTime <= now && scheduledTime >= fiveMinutesAgo) {
-        console.log(`Publishing snapshot ${snapshot.id}...`);
-        
+      // Check if scheduled time is in the past
+      if (scheduledTime <= now) {
+        console.log(`Publishing snapshot ${snapshot.manifest.id}...`);
+        console.log(`${ADMIN_API_BASE}/snapshot/${ORG}/${SITE}/${BRANCH}/${snapshot.manifest.id}?publish=true`);
         try {
           // Publish the snapshot
           const publishResponse = await fetch(
-            `${ADMIN_API_BASE}/snapshot/${ORG}/${SITE}/${BRANCH}/${snapshot.id}?publish=true`,
+            `${ADMIN_API_BASE}/snapshot/${ORG}/${SITE}/${BRANCH}/${snapshot.manifest.id}?publish=true`,
             {
               method: 'POST',
               headers: {
                 'Authorization': `token ${ADMIN_API_TOKEN}`,
                 'Content-Type': 'application/json'
-              }
+              },
+              body: JSON.stringify({
+                publish: true
+              })
             }
           ).then(res => res.json());
-          
-          console.log(`Successfully published snapshot ${snapshot.id}`);
+          console.log(publishResponse);
+          console.log(`Successfully published snapshot ${snapshot.manifest.id}`);
           
           // Update the manifest to remove scheduledPublish property and mark as published
           try {
-            console.log(`Updating manifest for snapshot ${snapshot.id}...`);
+            console.log(`Updating manifest for snapshot ${snapshot.manifest.id}...`);
             
             // Create updated manifest without scheduledPublish and with published metadata
             const updatedManifest = {
-              ...snapshot.manifest,
+              title: snapshot.manifest.title || '',
+              description: snapshot.manifest.description || '',
+              locked: snapshot.manifest.locked || false,
               metadata: {
-                ...snapshot.manifest.metadata,
                 publishedAt: new Date().toISOString(),
                 publishedBy: 'scheduled-snapshot-publisher',
                 status: 'published'
               }
-            };
-            
-            // Remove the scheduledPublish property
-            delete updatedManifest.metadata.scheduledPublish;
-            
+            };            
+            console.log(updatedManifest);
             // Update the snapshot manifest
             const manifestResponse = await fetch(
-              `${ADMIN_API_BASE}/snapshot/${ORG}/${SITE}/${BRANCH}/${snapshot.id}/manifest`,
+              `${ADMIN_API_BASE}/snapshot/${ORG}/${SITE}/${BRANCH}/${snapshot.manifest.id}`,
               {
                 method: 'POST',
                 headers: {
@@ -121,19 +132,19 @@ async function main() {
               }
             ).then(res => res.json());
             
-            console.log(`Successfully updated manifest for snapshot ${snapshot.id}`);
+            console.log(`Successfully updated manifest for snapshot ${snapshot.manifest.id}`);
             
           } catch (manifestError) {
-            console.error(`Failed to update manifest for snapshot ${snapshot.id}:`, manifestError.message);
+            console.error(`Failed to update manifest for snapshot ${snapshot.manifest.id}:`, manifestError.message);
             // Don't fail the entire process if manifest update fails
             // The snapshot was still published successfully
           }
           
         } catch (error) {
-          console.error(`Failed to publish snapshot ${snapshot.id}:`, error.message);
+          console.error(`Failed to publish snapshot ${snapshot.manifest.id}:`, error.message);
         }
       } else {
-        console.log(`Snapshot ${snapshot.id} not ready for publishing yet`);
+        console.log(`Snapshot ${snapshot.manifest.id} not ready for publishing yet`);
       }
     }
     
@@ -145,4 +156,4 @@ async function main() {
   }
 }
 
-main();
+await main();
