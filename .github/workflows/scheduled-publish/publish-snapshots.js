@@ -113,11 +113,13 @@ async function main() {
               description: snapshot.manifest.description || '',
               locked: snapshot.manifest.locked || false,
               metadata: {
+                ...snapshot.manifest.metadata,
                 publishedAt: new Date().toISOString(),
                 publishedBy: 'scheduled-snapshot-publisher',
                 status: 'published'
               }
-            };            
+            };
+            delete updatedManifest.metadata.scheduledPublish;
             console.log(updatedManifest);
             // Update the snapshot manifest
             const manifestResponse = await fetch(
