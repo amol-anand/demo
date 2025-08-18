@@ -1,0 +1,22 @@
+{
+  "name": "scheduled-snapshot-publisher",
+  "version": "1.0.0",
+  "description": "Automated snapshot publisher for Helix AEM Edge Delivery Services",
+  "main": "publish-snapshots.js",
+  "scripts": {
+    "start": "node publish-snapshots.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "helix",
+    "aem",
+    "snapshot",
+    "publishing",
+    "automation"
+  ],
+  "author": "Adobe",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
