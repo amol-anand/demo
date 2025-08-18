@@ -82,7 +82,7 @@ async function main() {
       console.log(`Snapshot ${snapshot.manifest.id}: scheduled for ${scheduledTime.toISOString()}`);
       
       // Check if scheduled time is in the past
-      if (scheduledTime <= now) {
+      if (scheduledTime <= now && scheduledTime > fiveMinutesAgo) {
         console.log(`Publishing snapshot ${snapshot.manifest.id}...`);
         console.log(`${ADMIN_API_BASE}/snapshot/${ORG}/${SITE}/${BRANCH}/${snapshot.manifest.id}?publish=true`);
         try {
