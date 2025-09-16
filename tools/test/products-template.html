@@ -9,56 +9,40 @@
     <header></header>
     <main>
       <div class="header">
-          <h1>Products Catalog</h1>
-          <div class="metadata">
-              <p><strong>Total Products:</strong> {{metadata.totalCount}}</p>
-              <p><strong>Last Updated:</strong> {{metadata.lastUpdated}}</p>
-          </div>
+          <h1>Product Details</h1>
       </div>
 
-      {{#products}}
-      <div class="products-grid">
-          {{#products}}
-          <div class="product-card">
-              <div class="product-id">ID: {{id}}</div>
-              <h2 class="product-name">{{name}}</h2>
-              <p class="product-description">{{description}}</p>
-              <div class="product-price">${{price}}</div>
-              
-              <div class="product-metadata">
-                  <div class="metadata-item">
-                      <span class="metadata-label">Slug:</span> {{metadata.slug}}
-                  </div>
-                  <div class="metadata-item">
-                      <span class="metadata-label">Category:</span> {{metadata.category}}
-                  </div>
-                  <div class="metadata-item">
-                      <span class="metadata-label">Tags:</span>
-                      <div class="tags">
-                          {{#metadata.tags}}
-                          <span class="tag">{{.}}</span>
-                          {{/metadata.tags}}
-                      </div>
+      <div class="product-card">
+          <div class="product-id">ID: {{id}}</div>
+          <h2 class="product-name">{{name}}</h2>
+          <p class="product-description">{{description}}</p>
+          <div class="product-price">${{price}}</div>
+          
+          <div class="product-metadata">
+              <div class="metadata-item">
+                  <span class="metadata-label">Slug:</span> {{metadata.slug}}
+              </div>
+              <div class="metadata-item">
+                  <span class="metadata-label">Category:</span> {{metadata.category}}
+              </div>
+              <div class="metadata-item">
+                  <span class="metadata-label">Tags:</span>
+                  <div class="tags">
+                      {{#metadata.tags}}
+                      <span class="tag">{{.}}</span>
+                      {{/metadata.tags}}
                   </div>
               </div>
-              
+          </div>
+          
+          {{#images}}
+          <div class="images">
               {{#images}}
-              <div class="images">
-                  {{#images}}
-                  <img src="{{.}}" alt="{{../name}}" class="image" onerror="this.style.display='none'">
-                  {{/images}}
-              </div>
+              <img src="{{.}}" alt="{{../name}}" class="image" onerror="this.style.display='none'">
               {{/images}}
           </div>
-          {{/products}}
+          {{/images}}
       </div>
-      {{/products}}
-
-      {{^products}}
-      <div class="no-products">
-          <p>No products available at this time.</p>
-      </div>
-      {{/products}}
     </main>
     <footer></footer>
 </body>
