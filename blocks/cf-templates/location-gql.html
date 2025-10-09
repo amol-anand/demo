@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{data.locationByPath.item.locationName}}</title>
+    <meta name="street-address" content="{{data.locationByPath.item.streetAddress}}">
+    <meta name="city" content="{{data.locationByPath.item.city}}">
+    <meta name="state" content="{{data.locationByPath.item.state}}">
+    <meta name="zip" content="{{data.locationByPath.item.zip}}">
+    <meta name="ratings" content="{{data.locationByPath.item.ratings}}">
+    <meta name="comments-count" content="{{data.locationByPath.item.commentsCount}}">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalClinic",
+        "name": "{{data.locationByPath.item.locationName}}",
+        "telephone": "+1-555-123-4567",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "{{data.locationByPath.item.streetAddress}}",
+          "addressLocality": "{{data.locationByPath.item.city}}",
+          "addressRegion": "{{data.locationByPath.item.state}}",
+          "postalCode": "{{data.locationByPath.item.zip}}"
+        },
+        "openingHours": "Mo-Fr 08:00-17:00",
+        "medicalSpecialty": "Family Medicine",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "{{data.locationByPath.item.ratings}}",
+          "reviewCount": "{{data.locationByPath.item.commentsCount}}"
+        }
+      }
+  </script>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div>
+        <div class="hero">
+          <div>
+            <div>
+              <picture>
+                <img src="{{{data.locationByPath.item.locationImage._publishUrl}}}" alt="{{data.locationByPath.item.locationImage.description}}">
+              </picture>
+            </div>
+          </div>
+          <div>
+            <div>
+              {{^data.locationByPath.item.locationNameOverride}}<h1>{{data.locationByPath.item.locationName}}</h1>{{/data.locationByPath.item.locationNameOverride}}
+              {{#data.locationByPath.item.locationNameOverride}}<h1>{{data.locationByPath.item.locationNameOverride}}</h1>{{/data.locationByPath.item.locationNameOverride}}
+              <p><strong><a href="https://www.adobe.com/">Learn More</a></strong></p>
+              <p>Aria label text for Primary Button</p>
+              <p><em><a href="https://www.adobe.com/">Visit Us</a></em></p>
+              <p>Aria label text for Secondary Button</p>
+            </div>
+          </div>
+          <div>
+            <div>
+              <p>{{data.locationByPath.item.subheadingText}}</p>
+              <p>{{{data.locationByPath.item.heroLinks.html}}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p>{{{data.locationByPath.item.bodyText.html}}}</p>
+        <div class="section-metadata">
+          <div>
+            <div>Style</div>
+            <div>highlight</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="columns">
+          <div>
+            <div>
+              <h3 id="address">Address</h3>
+              <p>{{data.locationByPath.item.streetAddress}}</p>
+              <p>{{data.locationByPath.item.city}}, {{data.locationByPath.item.state}} {{data.locationByPath.item.zip}}</p>
+            </div>
+            <div>
+              <h3 id="ratings--comments">Ratings &#x26; Comments</h3>
+              <div>⭐ {{data.locationByPath.item.ratings}}</div>
+              <div>{{data.locationByPath.item.commentsCount}} reviews</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="fragment">
+          <div>
+            <div><a href="{{data.locationByPath.item.experienceFragmentBottom}}">{{data.locationByPath.item.experienceFragmentBottom}}</a></div>
+          </div>
+        </div>
+        <div class="fragment">
+          <div>
+            <div><a href="{{data.locationByPath.item.fragment._path}}">{{data.locationByPath.item.fragment._path}}</a></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
