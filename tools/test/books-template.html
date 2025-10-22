@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Catalog</title>
+</head>
+<body>
+    <header></header>
+    <main>
+      <div class="header">
+          <h1>Book List</h1>
+      </div>
+
+      {{#.}}
+      <div class="book-card">
+          <div class="book-isbn">ISBN: {{ISDN}}</div>
+          <h2 class="book-name">{{Name}}</h2>
+          <div class="book-price">${{Price}}</div>
+          
+          <div class="book-metadata">
+              <div class="metadata-item">
+                  <span class="metadata-label">Author:</span> {{Author.Name}}
+              </div>
+              <div class="metadata-item">
+                  <span class="metadata-label">Nationality:</span> {{Author.Nationality}}
+              </div>
+              <div class="metadata-item">
+                  <span class="metadata-label">Publisher:</span> {{Publisher.Name}} ({{Publisher.Year}})
+              </div>
+              <div class="metadata-item">
+                  <span class="metadata-label">Categories:</span>
+                  <div class="categories">
+                      {{#Categories}}
+                      <span class="category">{{.}}</span>
+                      {{/Categories}}
+                  </div>
+              </div>
+              <div class="metadata-item">
+                  <span class="metadata-label">Availability:</span>
+                  {{#Availability}}
+                  <span class="availability in-stock">In Stock</span>
+                  {{/Availability}}
+                  {{^Availability}}
+                  <span class="availability out-of-stock">Out of Stock</span>
+                  {{/Availability}}
+              </div>
+              {{#Path}}
+              <div class="metadata-item">
+                  <span class="metadata-label">Path:</span> {{Path}}
+              </div>
+              {{/Path}}
+          </div>
+      </div>
+      {{/.}}
+    </main>
+    <footer></footer>
+</body>
+</html>
