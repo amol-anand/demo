@@ -20,34 +20,34 @@
           
           <div class="book-metadata">
               <div class="metadata-item">
-                  <span class="metadata-label">Author:</span> {{Author.Name}}
+                  <div class="metadata-label">Author:</div> {{Author.Name}}
               </div>
               <div class="metadata-item">
-                  <span class="metadata-label">Nationality:</span> {{Author.Nationality}}
+                  <div class="metadata-label">Nationality:</div> {{Author.Nationality}}
               </div>
               <div class="metadata-item">
-                  <span class="metadata-label">Publisher:</span> {{Publisher.Name}} ({{Publisher.Year}})
+                  <div class="metadata-label">Publisher:</div> {{Publisher.Name}} ({{Publisher.Year}})
               </div>
               <div class="metadata-item">
-                  <span class="metadata-label">Categories:</span>
+                  <div class="metadata-label">Categories:</div>
                   <div class="categories">
                       {{#Categories}}
-                      <span class="category">{{.}}</span>
+                      <div class="category">{{.}}</div>
                       {{/Categories}}
                   </div>
               </div>
               <div class="metadata-item">
-                  <span class="metadata-label">Availability:</span>
+                  <div class="metadata-label">Availability:</div>
                   {{#Availability}}
-                  <span class="availability in-stock">In Stock</span>
+                  <div class="availability in-stock">In Stock</div>
                   {{/Availability}}
                   {{^Availability}}
-                  <span class="availability out-of-stock">Out of Stock</span>
+                  <div class="availability out-of-stock">Out of Stock</div>
                   {{/Availability}}
               </div>
               {{#Path}}
               <div class="metadata-item">
-                  <span class="metadata-label">Path:</span> {{Path}}
+                  <div class="metadata-label">Path:</div> {{Path}}
               </div>
               {{/Path}}
           </div>
