@@ -19,34 +19,34 @@
           
           <div class="book-metadata">
               <div class="metadata-item">
-                  <div class="metadata-label">Author:</div> {{Author.Name}}
+                  <div class="metadata-label"><strong>Author:</strong> {{Author.Name}}</div>
               </div>
               <div class="metadata-item">
-                  <div class="metadata-label">Nationality:</div> {{Author.Nationality}}
+                  <div class="metadata-label"><strong>Nationality:</strong> {{Author.Nationality}}</div>
               </div>
               <div class="metadata-item">
-                  <div class="metadata-label">Publisher:</div> {{Publisher.Name}} ({{Publisher.Year}})
+                  <div class="metadata-label"><strong>Publisher:</strong> {{Publisher.Name}} ({{Publisher.Year}})</div>
               </div>
               <div class="metadata-item">
-                  <div class="metadata-label">Categories:</div>
-                  <div class="categories">
-                      {{#Categories}}
-                      <div class="category">{{.}}</div>
-                      {{/Categories}}
+                  <div class="metadata-label"><strong>Categories:</strong>
+                    {{#Categories}}
+                    <p class="category">{{.}}</p>
+                    {{/Categories}}
                   </div>
               </div>
               <div class="metadata-item">
-                  <div class="metadata-label">Availability:</div>
-                  {{#Availability}}
-                  <div class="availability in-stock">In Stock</div>
-                  {{/Availability}}
-                  {{^Availability}}
-                  <div class="availability out-of-stock">Out of Stock</div>
-                  {{/Availability}}
+                  <div class="metadata-label"><strong>Availability:</strong>
+                    {{#Availability}}
+                    <p class="availability in-stock">In Stock</p>
+                    {{/Availability}}
+                    {{^Availability}}
+                    <p class="availability out-of-stock">Out of Stock</p>
+                    {{/Availability}}
+                  </div>
               </div>
               {{#Path}}
               <div class="metadata-item">
-                  <div class="metadata-label">Path:</div> {{Path}}
+                  <div class="metadata-label"><strong>Path:</strong> {{Path}}</div>
               </div>
               {{/Path}}
           </div>

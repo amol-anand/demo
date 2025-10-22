@@ -15,39 +15,39 @@
       {{#.}}
       <div class="book-card">
           <div class="book-isbn">ISBN: {{ISDN}}</div>
-          <h2 class="book-name">{{Name}}</h2>
-          <div class="book-price">${{Price}}</div>
+          <h2 class="book-name"><strong>Name:</strong> {{Name}}</strong></h2>
+          <div class="book-price"><strong>Price:</strong> ${{Price}}</div>
           
           <div class="book-metadata">
               <div class="metadata-item">
-                  <div class="metadata-label">Author:</div> {{Author.Name}}
+                  <div class="metadata-label"><strong>Author:</strong> {{Author.Name}}</div>
               </div>
               <div class="metadata-item">
-                  <div class="metadata-label">Nationality:</div> {{Author.Nationality}}
+                  <div class="metadata-label"><strong>Nationality:</strong> {{Author.Nationality}}</div>
               </div>
               <div class="metadata-item">
-                  <div class="metadata-label">Publisher:</div> {{Publisher.Name}} ({{Publisher.Year}})
+                  <div class="metadata-label"><strong>Publisher:</strong> {{Publisher.Name}} ({{Publisher.Year}})</div>
               </div>
               <div class="metadata-item">
-                  <div class="metadata-label">Categories:</div>
-                  <div class="categories">
-                      {{#Categories}}
-                      <div class="category">{{.}}</div>
-                      {{/Categories}}
+                  <div class="metadata-label"><strong>Categories:</strong>
+                    {{#Categories}}
+                    <p class="category">{{.}}</p>
+                    {{/Categories}}
                   </div>
               </div>
               <div class="metadata-item">
-                  <div class="metadata-label">Availability:</div>
+                  <div class="metadata-label"><strong>Availability:</strong>
                   {{#Availability}}
-                  <div class="availability in-stock">In Stock</div>
+                  <p class="availability in-stock">In Stock</p>
                   {{/Availability}}
                   {{^Availability}}
-                  <div class="availability out-of-stock">Out of Stock</div>
+                  <p class="availability out-of-stock">Out of Stock</p>
                   {{/Availability}}
+                  </div>
               </div>
               {{#Path}}
               <div class="metadata-item">
-                  <div class="metadata-label">Path:</div> {{Path}}
+                  <div class="metadata-label"><strong>Path:</strong> {{Path}}</div>
               </div>
               {{/Path}}
           </div>
