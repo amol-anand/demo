@@ -38,8 +38,10 @@ This endpoint returns an array of location objects, each containing:
 
 Create Mustache templates that will transform your JSON data into Edge Delivery Services-friendly HTML. You'll need templates for:
 
-1. **List View Template** (`/tools/test/locations-template.html`) - Renders all locations
-2. **Detail View Template** (`/tools/test/location-template.html`) - Renders a single location
+1. **List View Template** (`https://main--demo--amol-anand.aem.live/tools/test/locations-template.html`) - Renders all locations
+2. **Detail View Template** (`https://main--demo--amol-anand.aem.live/tools/test/location-template.html`) - Renders a single location
+
+Copy them to your repo and modify or just use the same endpoints for now
 
 Templates use standard Mustache syntax:
 - `{{variable}}` for variable substitution
@@ -61,6 +63,8 @@ Templates use standard Mustache syntax:
 
 Use a POST request to configure the JSON2HTML worker with your endpoint and template mappings.
 
+**Note:** Replace your_admin_token with your actual admin token. You can obtain the Helix admin token by following these instructions: https://www.aem.live/docs/admin-apikeys OR by logging into admin.hlx.page/login and capturing the auth_token from the cookie set on that page.
+
 #### Using curl:
 
 ```bash
@@ -72,12 +76,12 @@ curl -X POST \
     {
       "path": "/locations/list",
       "endpoint": "https://main--demo--amol-anand.aem.live/locations/adobe-locations.json",
-      "template": "/tools/test/locations-template.html"
+      "template": "https://main--demo--amol-anand.aem.live/tools/test/locations-template.html"
     },
     {
       "path": "/locations/",
       "endpoint": "https://main--demo--amol-anand.aem.live/locations/adobe-locations.json",
-      "template": "/tools/test/location-template.html",
+      "template": "https://main--demo--amol-anand.aem.live/tools/test/location-template.html",
       "arrayKey": "data",
       "pathKey": "path"
     }
@@ -114,16 +118,20 @@ Once configured:
 
 1. **Preview the list page:**
    - Visit: `https://<BRANCH>--<SITE>--<ORG>.aem.page/locations/list`
+   - Click on Update on your sidekick (this action previews the page)
    - This should display all locations using `locations-template.html`
 
 2. **Preview individual location pages:**
    - Visit: `https://<BRANCH>--<SITE>--<ORG>.aem.page/locations/united-states/san-jose`
+   - Click on Update on your sidekick
    - This should display the San Jose location using `location-template.html`
 
 3. **Test other location paths:**
    - Try: `/locations/united-states/new-york`
    - Try: `/locations/canada/toronto`
    - Any path that matches a `path` value in your JSON will work
+
+**Note:** you can copy the `location` block from `https://github.com/amol-anand/demo/tree/main/blocks/location` to your repo to make it look nicer 
 
 ### Step 6: Verify and Publish
 
