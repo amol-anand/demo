@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{city}} - Adobe Office Location</title>
+</head>
+<body>
+    <header></header>
+    <main>
+      <div>
+        <div class="location">
+          <div>
+            <div>
+              <h1>{{city}}{{#officeType}} - {{officeType}}{{/officeType}}</h1>
+              <p><strong>Region:</strong> {{region}}</p>
+              <p><strong>Country:</strong> {{country}}</p>
+              
+              <div class="location-address">
+                <h2>Address</h2>
+                {{#address.street}}
+                <p>{{address.street}}</p>
+                {{/address.street}}
+                {{#address.suite}}
+                <p>{{address.suite}}</p>
+                {{/address.suite}}
+                {{#address.unit}}
+                <p>{{address.unit}}</p>
+                {{/address.unit}}
+                {{#address.building}}
+                <p>{{address.building}}</p>
+                {{/address.building}}
+                {{#address.floor}}
+                <p>{{address.floor}}</p>
+                {{/address.floor}}
+                {{#address.buildingName}}
+                <p>{{address.buildingName}}</p>
+                {{/address.buildingName}}
+                {{#address.tower}}
+                <p>{{address.tower}}</p>
+                {{/address.tower}}
+                {{#address.studio}}
+                <p>{{address.studio}}</p>
+                {{/address.studio}}
+                {{#address.campus}}
+                <p>{{address.campus}}</p>
+                {{/address.campus}}
+                {{#address.coworking}}
+                <p>{{address.coworking}}</p>
+                {{/address.coworking}}
+                {{#address.plot}}
+                <p>{{address.plot}}</p>
+                {{/address.plot}}
+                {{#address.block}}
+                <p>{{address.block}}</p>
+                {{/address.block}}
+                {{#address.corner}}
+                <p>{{address.corner}}</p>
+                {{/address.corner}}
+                {{#address.area}}
+                <p>{{address.area}}</p>
+                {{/address.area}}
+                {{#address.neighborhood}}
+                <p>{{address.neighborhood}}</p>
+                {{/address.neighborhood}}
+                {{#address.district}}
+                <p>{{address.district}}</p>
+                {{/address.district}}
+                <p>
+                  {{#address.city}}{{address.city}}{{/address.city}}{{#address.state}}, {{address.state}}{{/address.state}}{{#address.province}}, {{address.province}}{{/address.province}}{{#address.zip}} {{address.zip}}{{/address.zip}}{{#address.postalCode}} {{address.postalCode}}{{/address.postalCode}}
+                </p>
+                {{#address.country}}
+                <p>{{address.country}}</p>
+                {{/address.country}}
+              </div>
+
+              <div class="location-contact">
+                {{#phone}}
+                <p><strong>Phone:</strong> <a href="tel:{{phone}}">{{phone}}</a></p>
+                {{/phone}}
+                {{#fax}}
+                <p><strong>Fax:</strong> {{fax}}</p>
+                {{/fax}}
+              </div>
+
+              {{#notes}}
+              <div class="location-notes">
+                <p><em>{{notes}}</em></p>
+              </div>
+              {{/notes}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
+
