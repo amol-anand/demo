@@ -69,7 +69,7 @@ Use a POST request to configure the JSON2HTML worker with your endpoint and temp
 
 ```bash
 curl -X POST \
-  https://json2html.adobeaem.workers.dev/<ORG>/<SITE>/<BRANCH>/config \
+  https://json2html.adobeaem.workers.dev/config/<ORG>/<SITE>/<BRANCH> \
   -H "Authorization: token <your-admin-token>" \
   -H "Content-Type: application/json" \
   -d '[
@@ -146,7 +146,7 @@ Once previewed successfully:
 You can verify your configuration by checking the worker status:
 
 ```bash
-curl https://json2html.adobeaem.workers.dev/<ORG>/<SITE>/<BRANCH>/config \
+curl https://json2html.adobeaem.workers.dev/config/<ORG>/<SITE>/<BRANCH> \
   -H "Authorization: token <your-admin-token>"
 ```
 
