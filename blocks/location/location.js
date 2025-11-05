@@ -45,8 +45,8 @@ export default function decorate(block) {
     // Handle region and country metadata
     if (tagName === 'p' && (text.startsWith('Region:') || text.startsWith('Country:'))) {
       metaInfo.append(child.cloneNode(true));
-    } else if (tagName === 'h4' && text === 'Address') {
-      // Handle address heading
+    } else if ((tagName === 'h2' || tagName === 'h4') && text === 'Address') {
+      // Handle address heading (can be h2 or h4 depending on page type)
       inAddress = true;
       const addressHeading = child.cloneNode(true);
       addressHeading.className = 'location-section-heading';
