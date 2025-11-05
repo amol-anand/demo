@@ -1,0 +1,59 @@
+[
+    {
+        "Name": "The Great Gatsby",
+        "ISDN": "9780743273565",
+        "Price": 10.99,
+        "Categories": [
+            "Classic",
+            "Fiction"
+        ],
+        "Author": {
+            "Name": "F. Scott Fitzgerald",
+            "Nationality": "American"
+        },
+        "Publisher": {
+            "Name": "Scribner",
+            "Year": 1925
+        },
+        "Availability": true,
+        "Path": "/books/the-great-gatsby"
+    },
+    {
+        "Name": "1984",
+        "ISDN": "9780451524935",
+        "Price": 8.99,
+        "Categories": [
+            "Dystopian",
+            "Science Fiction"
+        ],
+        "Author": {
+            "Name": "George Orwell",
+            "Nationality": "British"
+        },
+        "Publisher": {
+            "Name": "Secker & Warburg",
+            "Year": 1949
+        },
+        "Availability": false,
+        "Path": "/books/1984"
+    },
+    {
+        "Name": "To Kill a Mockingbird",
+        "ISDN": "9780061120084",
+        "Price": 7.99,
+        "Categories": [
+            "Classic",
+            "Historical"
+        ],
+        "Author": {
+            "Name": "Harper Lee",
+            "Nationality": "American"
+        },
+        "Publisher": {
+            "Name": "J.B. Lippincott & Co.",
+            "Year": 1960
+        },
+        "Availability": true,
+        "Path": "/books/to-kill-a-mockingbird"
+    }
+]

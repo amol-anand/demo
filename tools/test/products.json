@@ -1,0 +1,51 @@
+{
+  "products": [
+    {
+      "id": "nested-001",
+      "name": "Nested Product Alpha",
+      "description": "Product with nested metadata structure",
+      "price": 199.99,
+      "metadata": {
+        "slug": "/nested/products/alpha",
+        "category": "electronics",
+        "tags": ["premium", "featured"]
+      },
+      "images": [
+        "/images/nested-alpha.jpg"
+      ]
+    },
+    {
+      "id": "nested-002",
+      "name": "Nested Product Beta",
+      "description": "Another product with nested structure",
+      "price": 299.99,
+      "metadata": {
+        "slug": "/nested/products/beta",
+        "category": "home",
+        "tags": ["basic", "reliable"]
+      },
+      "images": [
+        "/images/nested-beta.png"
+      ]
+    },
+    {
+      "id": "nested-003",
+      "name": "Nested Product Gamma",
+      "description": "Third nested product",
+      "price": 399.99,
+      "metadata": {
+        "slug": "/nested/products/gamma",
+        "category": "luxury",
+        "tags": ["exclusive", "premium"]
+      },
+      "images": [
+        "/images/nested-gamma.jpg",
+        "/images/nested-gamma-detail.png"
+      ]
+    }
+  ],
+  "metadata": {
+    "totalCount": 3,
+    "lastUpdated": "2024-01-15T15:00:00Z"
+  }
+}

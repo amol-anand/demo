@@ -1,0 +1,890 @@
+{
+  "offices": [
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "San Jose",
+      "officeType": "Corporate headquarters",
+      "address": {
+        "street": "345 Park Avenue",
+        "city": "San Jose",
+        "state": "CA",
+        "zip": "95110-2704"
+      },
+      "phone": "408-536-2800",
+      "fax": "408-537-6000",
+      "path": "/locations/united-states/san-jose"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "Atlanta",
+      "address": {
+        "street": "1221 Peachtree Street NE",
+        "suite": "Suite 150",
+        "city": "Atlanta",
+        "state": "GA",
+        "zip": "30361"
+      },
+      "path": "/locations/united-states/atlanta"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "Boston (Waltham)",
+      "address": {
+        "street": "1075 Main St., 2nd Floor",
+        "city": "Waltham",
+        "state": "MA",
+        "zip": "02451"
+      },
+      "path": "/locations/united-states/boston-waltham"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "Boston (Cambridge)",
+      "address": {
+        "street": "One Broadway",
+        "city": "Cambridge",
+        "state": "MA",
+        "zip": "02142"
+      },
+      "path": "/locations/united-states/boston-cambridge"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "Chicago",
+      "address": {
+        "street": "420 N. Wabash Ave, Suite 700",
+        "city": "Chicago",
+        "state": "IL",
+        "zip": "60611"
+      },
+      "phone": "312-764-5598",
+      "path": "/locations/united-states/chicago"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "Denver",
+      "notes": "former Marketo office",
+      "address": {
+        "street": "707 Seventeenth Street, Suite 3600",
+        "city": "Denver",
+        "state": "CO",
+        "zip": "80202"
+      },
+      "path": "/locations/united-states/denver"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "Hollywood",
+      "address": {
+        "street": "6555 Barton Avenue",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip": "90038"
+      },
+      "path": "/locations/united-states/hollywood"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "Lehi",
+      "address": {
+        "street": "3900 Adobe Way",
+        "city": "Lehi",
+        "state": "UT",
+        "zip": "84048"
+      },
+      "phone": "385-345-0000",
+      "path": "/locations/united-states/lehi"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "Los Angeles",
+      "notes": "former Magento office",
+      "address": {
+        "street": "3640 Holdrege Ave",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip": "90016"
+      },
+      "path": "/locations/united-states/los-angeles"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "Maryland",
+      "address": {
+        "street": "7878 Diamondback Drive",
+        "city": "College Park",
+        "state": "MD",
+        "zip": "20742"
+      },
+      "path": "/locations/united-states/maryland"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "Minnesota",
+      "address": {
+        "street": "3900 Northwoods Drive, Suite 300",
+        "city": "Arden Hills",
+        "state": "MN",
+        "zip": "55112"
+      },
+      "phone": "651-766-4700",
+      "fax": "651-766-4750",
+      "path": "/locations/united-states/minnesota"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "New York",
+      "address": {
+        "street": "1540 Broadway, 18th floor",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10036"
+      },
+      "phone": "212-471-0904",
+      "fax": "212-471-0990",
+      "path": "/locations/united-states/new-york"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "New York (Union Square)",
+      "address": {
+        "street": "100 Fifth Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10011"
+      },
+      "phone": "212-597-0504",
+      "path": "/locations/united-states/new-york-union-square"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "San Francisco",
+      "address": {
+        "street": "601 Townsend Street",
+        "city": "San Francisco",
+        "state": "CA",
+        "zip": "94103"
+      },
+      "phone": "415-832-2000",
+      "fax": "415-832-2020",
+      "path": "/locations/united-states/san-francisco"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "San Francisco",
+      "address": {
+        "street": "100 Hooper Street",
+        "city": "San Francisco",
+        "state": "CA",
+        "zip": "94107"
+      },
+      "phone": "415-832-4700",
+      "path": "/locations/united-states/san-francisco"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "Seattle",
+      "address": {
+        "street": "801 N. 34th Street",
+        "city": "Seattle",
+        "state": "WA",
+        "zip": "98103"
+      },
+      "phone": "206-675-7000",
+      "path": "/locations/united-states/seattle"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "Texas",
+      "address": {
+        "street": "11501 Domain Drive, Suite 110",
+        "city": "Austin",
+        "state": "TX",
+        "zip": "78758"
+      },
+      "path": "/locations/united-states/texas"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "Washington, D.C.",
+      "address": {
+        "street": "7930 Jones Branch Drive, 5th floor",
+        "city": "McLean",
+        "state": "VA",
+        "zip": "22102"
+      },
+      "phone": "571-765-5400",
+      "fax": "571-765-5450",
+      "path": "/locations/united-states/washington-dc"
+    },
+    {
+      "region": "North America - USA",
+      "country": "United States",
+      "city": "Washington, D.C.",
+      "address": {
+        "street": "300 New Jersey Ave NW",
+        "city": "Washington D.C.",
+        "state": "DC",
+        "zip": "20001"
+      },
+      "path": "/locations/united-states/washington-dc"
+    },
+    {
+      "region": "North America - Canada",
+      "country": "Canada",
+      "city": "Ottawa",
+      "address": {
+        "street": "343 Preston Street",
+        "city": "Ottawa",
+        "province": "Ontario",
+        "postalCode": "K1S 1N4"
+      },
+      "phone": "613-940-3676",
+      "fax": "613-594-8886",
+      "path": "/locations/canada/ottawa"
+    },
+    {
+      "region": "North America - Canada",
+      "country": "Canada",
+      "city": "Toronto",
+      "address": {
+        "street": "302 Bay Street",
+        "city": "Toronto",
+        "province": "Ontario",
+        "postalCode": "M5H4A6"
+      },
+      "path": "/locations/canada/toronto"
+    },
+    {
+      "region": "North America - Mexico",
+      "country": "Mexico",
+      "city": "Mexico City",
+      "address": {
+        "street": "Prado Norte 225",
+        "neighborhood": "Lomas De Chapultepec",
+        "city": "Mexico City",
+        "zip": "11000"
+      },
+      "path": "/locations/mexico/mexico-city"
+    },
+    {
+      "region": "Asia - China",
+      "country": "China",
+      "city": "Beijing",
+      "address": {
+        "building": "0909, 9/F, China World Tower",
+        "street": "No. 1 Jian Guo Men Wai Avenue",
+        "city": "Beijing",
+        "zip": "100004"
+      },
+      "phone": "+86 10-5865 7700",
+      "fax": "+86 10-5865 7701",
+      "path": "/locations/china/beijing"
+    },
+    {
+      "region": "Asia - China",
+      "country": "China",
+      "city": "Shanghai",
+      "address": {
+        "unit": "Unit 2027-2030, Mirae Asset Tower",
+        "street": "No.166 Lujiazui Ring Road",
+        "district": "Pudong New Area",
+        "city": "Shanghai",
+        "zip": "200120"
+      },
+      "phone": "+86 21-8011 8228",
+      "fax": "+86 21-8011 8239",
+      "path": "/locations/china/shanghai"
+    },
+    {
+      "region": "Asia - China",
+      "country": "China",
+      "city": "Guangzhou",
+      "address": {
+        "building": "K11 L38 Address: Level 38, Guangzhou CTF Finance Center",
+        "street": "No.6 Zhujiang Dong Road, Tianhe District",
+        "city": "Guangzhou",
+        "zip": "510062"
+      },
+      "path": "/locations/china/guangzhou"
+    },
+    {
+      "region": "Asia - China",
+      "country": "China",
+      "city": "Hong Kong",
+      "address": {
+        "building": "The Executive Centre",
+        "floor": "Level 23, One Island East",
+        "street": "18 Westlands Road",
+        "area": "Quarry Bay",
+        "city": "Hong Kong"
+      },
+      "phone": "+852-3750 7907",
+      "path": "/locations/china/hong-kong"
+    },
+    {
+      "region": "Asia - China",
+      "country": "China",
+      "city": "Shenzhen",
+      "address": {
+        "building": "Kerry Plaza Tower 2",
+        "floor": "Level 15, Kerry Plaza Tower 2",
+        "street": "No. 1 Zhong Xin Si Road, Futian District",
+        "city": "Shenzhen",
+        "zip": "518048"
+      },
+      "phone": "+86 755 3304 3155",
+      "path": "/locations/china/shenzhen"
+    },
+    {
+      "region": "Asia - India",
+      "country": "India",
+      "city": "Noida",
+      "address": {
+        "plot": "Plot No. 05, Block A, Sector-132",
+        "city": "Noida",
+        "state": "U.P.",
+        "zip": "201304"
+      },
+      "phone": "+91-120-4444711",
+      "fax": "+91-120-4444737",
+      "path": "/locations/india/noida"
+    },
+    {
+      "region": "Asia - India",
+      "country": "India",
+      "city": "Noida",
+      "address": {
+        "plot": "I-1A, Sector 25A",
+        "city": "Noida",
+        "state": "U.P.",
+        "zip": "201301"
+      },
+      "phone": "+91 120 444 4711",
+      "fax": "+91 120 433 3427 or 433-3439",
+      "path": "/locations/india/noida"
+    },
+    {
+      "region": "Asia - India",
+      "country": "India",
+      "city": "Bangalore",
+      "address": {
+        "building": "Prestige Platina Technology Park, Building 1, Block A",
+        "city": "Bangalore",
+        "zip": "560103"
+      },
+      "phone": "+91 (80) 4193-9500",
+      "path": "/locations/india/bangalore"
+    },
+    {
+      "region": "Asia - India",
+      "country": "India",
+      "city": "Bangalore",
+      "address": {
+        "building": "Prestige Tech Park IV",
+        "block": "Block-1, Outer Ring Road",
+        "area": "Marathahalli, Boghanahalli Village, Hobli Kadubeesanahalli, Varthur",
+        "city": "Bangalore",
+        "zip": "560087"
+      },
+      "path": "/locations/india/bangalore"
+    },
+    {
+      "region": "Asia - India",
+      "country": "India",
+      "city": "Mumbai",
+      "address": {
+        "building": "TEC, Level 7, Parinee Crescenzo",
+        "plot": "Plot No. C-38/39, G Block",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "zip": "400051"
+      },
+      "path": "/locations/india/mumbai"
+    },
+    {
+      "region": "Asia - India",
+      "country": "India",
+      "city": "Gurgaon",
+      "address": {
+        "building": "The Executive Centre, Horizon Complex, Level 12 Two Horizon Centre",
+        "street": "Golf Course Road, DLF Phase–5, Sector 43",
+        "city": "Gurgaon",
+        "zip": "122002"
+      },
+      "path": "/locations/india/gurgaon"
+    },
+    {
+      "region": "Asia - India",
+      "country": "India",
+      "city": "Nanakaramguda",
+      "address": {
+        "building": "iSprout, 8th Floor in Sohini Tech Park",
+        "street": "Nanakramguda Rd",
+        "area": "Financial District, Nanakaramguda",
+        "state": "Telangana",
+        "zip": "500032"
+      },
+      "path": "/locations/india/nanakaramguda"
+    },
+    {
+      "region": "Asia - Japan",
+      "country": "Japan",
+      "city": "Tokyo",
+      "address": {
+        "building": "Gate City Osaki, East Tower",
+        "street": "1-11-2 Osaki",
+        "district": "Shinagawa-ku",
+        "city": "Tokyo",
+        "zip": "141-0032"
+      },
+      "phone": "011-81-3-6739-9500",
+      "path": "/locations/japan/tokyo"
+    },
+    {
+      "region": "Asia - Korea",
+      "country": "South Korea",
+      "city": "Seoul",
+      "address": {
+        "floor": "19F, Parnas Tower",
+        "area": "Samseong-dong",
+        "street": "521, Teheran-ro, Gangnam-gu",
+        "city": "Seoul",
+        "zip": "06164"
+      },
+      "phone": "+82 2 530 8000",
+      "fax": "+82 2 530 8001",
+      "path": "/locations/south-korea/seoul"
+    },
+    {
+      "region": "Asia - Singapore",
+      "country": "Singapore",
+      "city": "Singapore",
+      "address": {
+        "street": "8 Temasek Boulevard",
+        "city": "Singapore",
+        "zip": "038988"
+      },
+      "phone": "+65 6511 5500",
+      "fax": "+65 6333 8023",
+      "path": "/locations/singapore/singapore"
+    },
+    {
+      "region": "Asia - Thailand",
+      "country": "Thailand",
+      "city": "Bangkok",
+      "address": {
+        "floor": "Level 18, Park Ventures Ecoplex",
+        "street": "57 Witthayu Road, Lumpini",
+        "district": "Pathumwan District",
+        "city": "Bangkok",
+        "zip": "1330"
+      },
+      "path": "/locations/thailand/bangkok"
+    },
+    {
+      "region": "Asia - Taiwan",
+      "country": "Taiwan",
+      "city": "Taipei",
+      "address": {
+        "floor": "Level 34, Taipei Nanshan Plaza",
+        "street": "No. 100, Songren Road, Zhongxiao East Road",
+        "district": "Xinyi District",
+        "city": "Taipei",
+        "zip": "110016"
+      },
+      "phone": "+886 2 37257975",
+      "path": "/locations/taiwan/taipei"
+    },
+    {
+      "region": "New Zealand",
+      "country": "New Zealand",
+      "city": "Auckland",
+      "address": {
+        "building": "Spaces Commercial Bay",
+        "unit": "Unit 1702, Level 17",
+        "buildingName": "PWC Tower",
+        "street": "15 Customs Street West",
+        "area": "Auckland CBD",
+        "city": "Auckland",
+        "zip": "1010"
+      },
+      "path": "/locations/new-zealand/auckland"
+    },
+    {
+      "region": "Australia",
+      "country": "Australia",
+      "city": "Melbourne",
+      "address": {
+        "floor": "Level2, Suite 4",
+        "street": "101 Moray Street",
+        "city": "South Melbourne",
+        "state": "VIC",
+        "zip": "3205"
+      },
+      "phone": "+61 2 9778 4100",
+      "fax": "+61 2 9778 4190",
+      "path": "/locations/australia/melbourne"
+    },
+    {
+      "region": "Australia",
+      "country": "Australia",
+      "city": "Sydney",
+      "address": {
+        "tower": "Tower 2, Level 27",
+        "street": "201 Sussex Street",
+        "city": "Sydney",
+        "state": "NSW",
+        "zip": "2000"
+      },
+      "phone": "+61 2 9778 4100",
+      "fax": "+61 2 9778 4190",
+      "path": "/locations/australia/sydney"
+    },
+    {
+      "region": "Australia",
+      "country": "Australia",
+      "city": "Canberra",
+      "address": {
+        "floor": "Level 1",
+        "street": "33 Allara Street",
+        "city": "Canberra",
+        "state": "ACT",
+        "zip": "2601"
+      },
+      "path": "/locations/australia/canberra"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Armenia",
+      "country": "Armenia",
+      "city": "Yerevan",
+      "address": {
+        "street": "Halabyan 22/5",
+        "floor": "2nd floor",
+        "city": "Yerevan",
+        "zip": "0036"
+      },
+      "path": "/locations/armenia/yerevan"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Belgium",
+      "country": "Belgium",
+      "city": "Brussels",
+      "address": {
+        "street": "Park Lane Culliganlaan 2F",
+        "city": "1B-1831 Diegem"
+      },
+      "phone": "+32 2 416 40 00",
+      "path": "/locations/belgium/brussels"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Denmark",
+      "country": "Denmark",
+      "city": "København",
+      "address": {
+        "street": "Islands Brygge 57, 2th",
+        "city": "2300 København"
+      },
+      "phone": "+45 3231 6000",
+      "path": "/locations/denmark/kobenhavn"
+    },
+    {
+      "region": "Europe, Middle East and Africa - France",
+      "country": "France",
+      "city": "Paris",
+      "address": {
+        "street": "94-96 Rue Lauriston",
+        "city": "75016 Paris"
+      },
+      "path": "/locations/france/paris"
+    },
+    {
+      "region": "Europe, Middle East and Africa - France",
+      "country": "France",
+      "city": "Clermont-Ferrand",
+      "address": {
+        "street": "3 Avenue Julien",
+        "city": "63000 Clermont-Ferrand"
+      },
+      "path": "/locations/france/clermont-ferrand"
+    },
+    {
+      "region": "Europe, Middle East and Africa - France",
+      "country": "France",
+      "city": "Lyon",
+      "address": {
+        "street": "1 Place Pascalon",
+        "city": "Lyon",
+        "zip": "69002"
+      },
+      "path": "/locations/france/lyon"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Germany",
+      "country": "Germany",
+      "city": "München",
+      "address": {
+        "street": "Georg-Brauchle-Ring 56/58",
+        "city": "D-80992 München"
+      },
+      "phone": "+49 89 31 705 0",
+      "fax": "+49 89 31 705 432",
+      "path": "/locations/germany/munchen"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Germany",
+      "country": "Germany",
+      "city": "Berlin",
+      "address": {
+        "street": "Ella-Trebe-Straße 3",
+        "city": "10557 Berlin"
+      },
+      "path": "/locations/germany/berlin"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Germany",
+      "country": "Germany",
+      "city": "Hamburg",
+      "address": {
+        "street": "Große Elbstr. 27",
+        "city": "22767 Hamburg"
+      },
+      "phone": "+49 40 306 36 0",
+      "fax": "+49 40 306 36 333",
+      "path": "/locations/germany/hamburg"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Switzerland",
+      "country": "Switzerland",
+      "city": "Basel",
+      "address": {
+        "street": "Peter-Merian-Str. 80",
+        "city": "4052 Basel"
+      },
+      "path": "/locations/switzerland/basel"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Switzerland",
+      "country": "Switzerland",
+      "city": "Zürich",
+      "address": {
+        "street": "Leutschenbachstrasse 95",
+        "city": "CH-8050 Zürich"
+      },
+      "phone": "+41 44 307 1700",
+      "path": "/locations/switzerland/zurich"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Ireland",
+      "country": "Ireland",
+      "city": "Dublin",
+      "address": {
+        "street": "6 Riverwalk, Naas Road",
+        "city": "24, Dublin"
+      },
+      "phone": "+353 1 242 6700",
+      "fax": "+353 1 242 6711",
+      "path": "/locations/ireland/dublin"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Italy",
+      "country": "Italy",
+      "city": "Milan",
+      "address": {
+        "street": "Via Roberto Bracco 6",
+        "floor": "Terzo Piano",
+        "city": "20159, Milano"
+      },
+      "phone": "+39 039 6550.1",
+      "fax": "+39 039 6550.50",
+      "path": "/locations/italy/milan"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Italy",
+      "country": "Italy",
+      "city": "Rome",
+      "address": {
+        "coworking": "c/o Tiempo Business Center",
+        "street": "Via Leone XIII 95",
+        "city": "00165, Roma"
+      },
+      "phone": "+39 06 39870292",
+      "fax": "+39 06 39870289",
+      "path": "/locations/italy/rome"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Netherlands",
+      "country": "Netherlands",
+      "city": "Amsterdam",
+      "address": {
+        "street": "Fred. Roeskestraat 100",
+        "studio": "Studio 004",
+        "city": "1076ED Amsterdam"
+      },
+      "phone": "+31 20 65 11 200",
+      "path": "/locations/netherlands/amsterdam"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Netherlands",
+      "country": "Netherlands",
+      "city": "Arnhem",
+      "address": {
+        "street": "Vossenstraat 6",
+        "city": "6811JL Arnhem"
+      },
+      "path": "/locations/netherlands/arnhem"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Poland",
+      "country": "Poland",
+      "city": "Warsaw",
+      "address": {
+        "building": "Warsaw Tower",
+        "street": "39, Sienna Street, 8th floor",
+        "city": "00-121 Warsaw"
+      },
+      "path": "/locations/poland/warsaw"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Romania",
+      "country": "Romania",
+      "city": "Bucharest",
+      "address": {
+        "building": "U-Center 2",
+        "street": "206-218, Calea Șerban Vodă 4",
+        "city": "Bucharest",
+        "zip": "040215"
+      },
+      "path": "/locations/romania/bucharest"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Saudi Arabia",
+      "country": "Saudi Arabia",
+      "city": "Riyadh",
+      "address": {
+        "street": "Omar Ibn Omaya Al Damri Street",
+        "area": "Diplomatic Quarter",
+        "city": "Riyadh"
+      },
+      "path": "/locations/saudi-arabia/riyadh"
+    },
+    {
+      "region": "Europe, Middle East and Africa - South Africa",
+      "country": "South Africa",
+      "city": "Johannesburg",
+      "address": {
+        "corner": "Cnr Main & Sloane Street Bryanston",
+        "building": "The Campus Twickenham Building",
+        "city": "Johannesburg",
+        "zip": "2021"
+      },
+      "phone": "+27 (0)11 575 0008",
+      "fax": "+27 (0)86 541 0842",
+      "path": "/locations/south-africa/johannesburg"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Spain",
+      "country": "Spain",
+      "city": "Barcelona",
+      "address": {
+        "street": "Calle Llacuna 56-70",
+        "city": "08005 Barcelona"
+      },
+      "path": "/locations/spain/barcelona"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Spain",
+      "country": "Spain",
+      "city": "Madrid",
+      "address": {
+        "building": "Plaza de Castilla First",
+        "street": "Paseo de la Castellana, 216",
+        "city": "28046, Madrid"
+      },
+      "path": "/locations/spain/madrid"
+    },
+    {
+      "region": "Europe, Middle East and Africa - Sweden",
+      "country": "Sweden",
+      "city": "Stockholm",
+      "address": {
+        "floor": "Floor 7",
+        "street": "Master Samuelsgatan 36",
+        "city": "111 57 Stockholm"
+      },
+      "phone": "+46 8 752 3300",
+      "fax": "+46 8 751 4955",
+      "path": "/locations/sweden/stockholm"
+    },
+    {
+      "region": "Europe, Middle East and Africa - United Kingdom",
+      "country": "United Kingdom",
+      "city": "Reading",
+      "address": {
+        "campus": "CAMPUS Reading International",
+        "building": "Block F 3rd Basingstoke Rd",
+        "city": "Reading",
+        "zip": "RG2 6DA"
+      },
+      "phone": "+44 1628 590 000",
+      "fax": "+44 1628 590 100",
+      "path": "/locations/united-kingdom/reading"
+    },
+    {
+      "region": "Europe, Middle East and Africa - United Kingdom",
+      "country": "United Kingdom",
+      "city": "London",
+      "address": {
+        "building": "White Collar Factory",
+        "street": "1 Old Street Yard",
+        "city": "London",
+        "zip": "EC1Y 8AF"
+      },
+      "path": "/locations/united-kingdom/london"
+    },
+    {
+      "region": "Europe, Middle East and Africa - United Kingdom",
+      "country": "United Kingdom",
+      "city": "Edinburgh",
+      "address": {
+        "building": "Vantage Point (Edinburgh)",
+        "city": "EH11 4DF Scotland"
+      },
+      "phone": "+44(0)131-458-2602",
+      "path": "/locations/united-kingdom/edinburgh"
+    },
+    {
+      "region": "South America - Brazil",
+      "country": "Brazil",
+      "city": "Sao Paulo",
+      "address": {
+        "street": "Avenida Doutor Churci Zaidan 1240-Vila Cordeiro",
+        "floor": "16th Floor - Golden Tower",
+        "city": "Sao Paulo",
+        "state": "SP",
+        "zip": "04711-130"
+      },
+      "phone": "+55(11)2175-8495",
+      "fax": "+55(11)2175-8401",
+      "path": "/locations/brazil/sao-paulo"
+    }
+  ]
+}

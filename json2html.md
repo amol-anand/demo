@@ -1,0 +1,160 @@
+# JSON2HTML Setup Exercise
+
+This guide walks you through setting up **JSON2HTML** for Edge Delivery Services. JSON2HTML transforms JSON data into fully formed HTML pages using Mustache templates, allowing you to create dynamic pages from static JSON data sources.
+
+## What is JSON2HTML?
+
+JSON2HTML is a generic worker that bridges the gap between raw JSON responses from legacy headless CMS systems and the clean HTML you need for Edge Delivery Services. It requires minimal setup and no need to deploy your own service.
+
+**Documentation:** [https://www.aem.live/developer/json2html](https://www.aem.live/developer/json2html)
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+1. An AEM Edge Delivery Services site set up
+2. Your organization name (`<ORG>`), site name (`<SITE>`), and branch name (`<BRANCH>`)
+3. An AEM Admin API token for authentication
+4. JSON data available at a publicly accessible endpoint
+5. A Mustache template to transform your JSON into HTML
+
+## Step-by-Step Setup
+
+### Step 1: Prepare Your JSON Data
+
+Ensure your JSON data is accessible via a public endpoint. In this exercise, we'll use a sample endpoint that contains Adobe office location data.
+
+**Sample Endpoint:**
+```
+https://main--demo--amol-anand.aem.live/locations/adobe-locations.json
+```
+
+This endpoint returns an array of location objects, each containing:
+- `region`, `country`, `city`
+- `street`, `state`, `zip`, `phone`, `fax`
+- `path` (used for routing individual location pages)
+
+### Step 2: Prepare Your Mustache Templates
+
+Create Mustache templates that will transform your JSON data into Edge Delivery Services-friendly HTML. You'll need templates for:
+
+1. **List View Template** (`/tools/test/locations-template.html`) - Renders all locations
+2. **Detail View Template** (`/tools/test/location-template.html`) - Renders a single location
+
+Templates use standard Mustache syntax:
+- `{{variable}}` for variable substitution
+- `{{#section}}...{{/section}}` for conditional sections
+- `{{#array}}...{{/array}}` for array iteration
+
+### Step 3: Add Overlay to Content Source
+
+```json
+"overlay": {
+   "url": "https://json2html.adobeaem.workers.dev/<ORG>/<SITE>/<BRANCH>",
+   "type": "markup"
+ },
+```
+
+**Important:** Replace `<ORG>`, `<SITE>`, and `<BRANCH>` with your actual values.
+
+### Step 4: Configure JSON2HTML Worker
+
+Use a POST request to configure the JSON2HTML worker with your endpoint and template mappings.
+
+#### Using curl:
+
+```bash
+curl -X POST \
+  https://json2html.adobeaem.workers.dev/<ORG>/<SITE>/<BRANCH>/config \
+  -H "Authorization: token <your-admin-token>" \
+  -H "Content-Type: application/json" \
+  -d '[
+    {
+      "path": "/locations/list",
+      "endpoint": "https://main--demo--amol-anand.aem.live/locations/adobe-locations.json",
+      "template": "/tools/test/locations-template.html"
+    },
+    {
+      "path": "/locations/",
+      "endpoint": "https://main--demo--amol-anand.aem.live/locations/adobe-locations.json",
+      "template": "/tools/test/location-template.html",
+      "arrayKey": "data",
+      "pathKey": "path"
+    }
+  ]'
+```
+
+**Replace:**
+- `<ORG>` with your organization name
+- `<SITE>` with your site name
+- `<BRANCH>` with your branch name (typically `main`)
+- `<your-admin-token>` with your AEM Admin API token
+
+#### Configuration Explained
+
+The configuration contains two path mappings:
+
+1. **`/locations/list`** - Simple mapping:
+   - Fetches the entire JSON array from the endpoint
+   - Uses `locations-template.html` to render all locations
+   - No filtering needed - displays everything
+
+2. **`/locations/`** - Dynamic routing with filtering:
+   - Fetches the JSON array from the endpoint
+   - Uses `arrayKey: "data"` to specify the array (though in this case the root is already an array)
+   - Uses `pathKey: "path"` to match incoming URLs against the `path` property in each location object
+   - Uses `location-template.html` to render the matched location
+   - Example: Visiting `/locations/united-states/san-jose` will find the location object with `"path": "/locations/united-states/san-jose"` and render it
+
+**Note:** The sample JSON has the root as an array, so `arrayKey` might not be needed. However, if your JSON structure is `{ "data": [...] }`, you would use `arrayKey: "data"`.
+
+### Step 5: Preview Your Dynamic Pages
+
+Once configured:
+
+1. **Preview the list page:**
+   - Visit: `https://<BRANCH>--<SITE>--<ORG>.aem.page/locations/list`
+   - This should display all locations using `locations-template.html`
+
+2. **Preview individual location pages:**
+   - Visit: `https://<BRANCH>--<SITE>--<ORG>.aem.page/locations/united-states/san-jose`
+   - This should display the San Jose location using `location-template.html`
+
+3. **Test other location paths:**
+   - Try: `/locations/united-states/new-york`
+   - Try: `/locations/canada/toronto`
+   - Any path that matches a `path` value in your JSON will work
+
+### Step 6: Verify and Publish
+
+Once previewed successfully:
+
+1. The HTML generated by JSON2HTML will be cached and available
+2. You can preview and publish like any other Edge Delivery Services page
+3. All standard Edge Delivery Services features (blocks, CSS, JS) work normally
+
+### Testing Your Configuration
+
+You can verify your configuration by checking the worker status:
+
+```bash
+curl https://json2html.adobeaem.workers.dev/<ORG>/<SITE>/<BRANCH>/config \
+  -H "Authorization: token <your-admin-token>"
+```
+
+This will return your current configuration.
+
+
+## Next Steps
+
+Once your JSON2HTML setup is working:
+
+1. Customize your templates to match your site design
+2. Add CSS/JS blocks to enhance the generated pages
+3. Set up additional endpoints and templates as needed
+4. Consider using Edge Delivery spreadsheet JSON as an endpoint source
+5. Explore advanced features like `relativeURLPrefix` and `useAEMMapping`
+
+## Resources
+
+- [Official JSON2HTML Documentation](https://www.aem.live/developer/json2html)
