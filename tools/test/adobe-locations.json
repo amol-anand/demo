@@ -13,7 +13,7 @@
       },
       "phone": "408-536-2800",
       "fax": "408-537-6000",
-      "path": "locations/united-states/san-jose"
+      "path": "/locations/united-states/san-jose"
     },
     {
       "region": "North America - USA",
@@ -26,7 +26,7 @@
         "state": "GA",
         "zip": "30361"
       },
-      "path": "locations/united-states/atlanta"
+      "path": "/locations/united-states/atlanta"
     },
     {
       "region": "North America - USA",
@@ -38,7 +38,7 @@
         "state": "MA",
         "zip": "02451"
       },
-      "path": "locations/united-states/boston-waltham"
+      "path": "/locations/united-states/boston-waltham"
     },
     {
       "region": "North America - USA",
@@ -50,7 +50,7 @@
         "state": "MA",
         "zip": "02142"
       },
-      "path": "locations/united-states/boston-cambridge"
+      "path": "/locations/united-states/boston-cambridge"
     },
     {
       "region": "North America - USA",
@@ -63,7 +63,7 @@
         "zip": "60611"
       },
       "phone": "312-764-5598",
-      "path": "locations/united-states/chicago"
+      "path": "/locations/united-states/chicago"
     },
     {
       "region": "North America - USA",
@@ -76,7 +76,7 @@
         "state": "CO",
         "zip": "80202"
       },
-      "path": "locations/united-states/denver"
+      "path": "/locations/united-states/denver"
     },
     {
       "region": "North America - USA",
@@ -88,7 +88,7 @@
         "state": "CA",
         "zip": "90038"
       },
-      "path": "locations/united-states/hollywood"
+      "path": "/locations/united-states/hollywood"
     },
     {
       "region": "North America - USA",
@@ -101,7 +101,7 @@
         "zip": "84048"
       },
       "phone": "385-345-0000",
-      "path": "locations/united-states/lehi"
+      "path": "/locations/united-states/lehi"
     },
     {
       "region": "North America - USA",
@@ -114,7 +114,7 @@
         "state": "CA",
         "zip": "90016"
       },
-      "path": "locations/united-states/los-angeles"
+      "path": "/locations/united-states/los-angeles"
     },
     {
       "region": "North America - USA",
@@ -126,7 +126,7 @@
         "state": "MD",
         "zip": "20742"
       },
-      "path": "locations/united-states/maryland"
+      "path": "/locations/united-states/maryland"
     },
     {
       "region": "North America - USA",
@@ -140,7 +140,7 @@
       },
       "phone": "651-766-4700",
       "fax": "651-766-4750",
-      "path": "locations/united-states/minnesota"
+      "path": "/locations/united-states/minnesota"
     },
     {
       "region": "North America - USA",
@@ -154,7 +154,7 @@
       },
       "phone": "212-471-0904",
       "fax": "212-471-0990",
-      "path": "locations/united-states/new-york"
+      "path": "/locations/united-states/new-york"
     },
     {
       "region": "North America - USA",
@@ -167,7 +167,7 @@
         "zip": "10011"
       },
       "phone": "212-597-0504",
-      "path": "locations/united-states/new-york-union-square"
+      "path": "/locations/united-states/new-york-union-square"
     },
     {
       "region": "North America - USA",
@@ -181,7 +181,7 @@
       },
       "phone": "415-832-2000",
       "fax": "415-832-2020",
-      "path": "locations/united-states/san-francisco"
+      "path": "/locations/united-states/san-francisco"
     },
     {
       "region": "North America - USA",
@@ -194,7 +194,7 @@
         "zip": "94107"
       },
       "phone": "415-832-4700",
-      "path": "locations/united-states/san-francisco"
+      "path": "/locations/united-states/san-francisco"
     },
     {
       "region": "North America - USA",
@@ -207,7 +207,7 @@
         "zip": "98103"
       },
       "phone": "206-675-7000",
-      "path": "locations/united-states/seattle"
+      "path": "/locations/united-states/seattle"
     },
     {
       "region": "North America - USA",
@@ -219,7 +219,7 @@
         "state": "TX",
         "zip": "78758"
       },
-      "path": "locations/united-states/texas"
+      "path": "/locations/united-states/texas"
     },
     {
       "region": "North America - USA",
@@ -233,7 +233,7 @@
       },
       "phone": "571-765-5400",
       "fax": "571-765-5450",
-      "path": "locations/united-states/washington-dc"
+      "path": "/locations/united-states/washington-dc"
     },
     {
       "region": "North America - USA",
@@ -245,7 +245,7 @@
         "state": "DC",
         "zip": "20001"
       },
-      "path": "locations/united-states/washington-dc"
+      "path": "/locations/united-states/washington-dc"
     },
     {
       "region": "North America - Canada",
@@ -259,7 +259,7 @@
       },
       "phone": "613-940-3676",
       "fax": "613-594-8886",
-      "path": "locations/canada/ottawa"
+      "path": "/locations/canada/ottawa"
     },
     {
       "region": "North America - Canada",
@@ -271,7 +271,7 @@
         "province": "Ontario",
         "postalCode": "M5H4A6"
       },
-      "path": "locations/canada/toronto"
+      "path": "/locations/canada/toronto"
     },
     {
       "region": "North America - Mexico",
@@ -283,7 +283,7 @@
         "city": "Mexico City",
         "zip": "11000"
       },
-      "path": "locations/mexico/mexico-city"
+      "path": "/locations/mexico/mexico-city"
     },
     {
       "region": "Asia - China",
@@ -297,7 +297,7 @@
       },
       "phone": "+86 10-5865 7700",
       "fax": "+86 10-5865 7701",
-      "path": "locations/china/beijing"
+      "path": "/locations/china/beijing"
     },
     {
       "region": "Asia - China",
@@ -312,7 +312,7 @@
       },
       "phone": "+86 21-8011 8228",
       "fax": "+86 21-8011 8239",
-      "path": "locations/china/shanghai"
+      "path": "/locations/china/shanghai"
     },
     {
       "region": "Asia - China",
@@ -324,7 +324,7 @@
         "city": "Guangzhou",
         "zip": "510062"
       },
-      "path": "locations/china/guangzhou"
+      "path": "/locations/china/guangzhou"
     },
     {
       "region": "Asia - China",
@@ -338,7 +338,7 @@
         "city": "Hong Kong"
       },
       "phone": "+852-3750 7907",
-      "path": "locations/china/hong-kong"
+      "path": "/locations/china/hong-kong"
     },
     {
       "region": "Asia - China",
@@ -352,7 +352,7 @@
         "zip": "518048"
       },
       "phone": "+86 755 3304 3155",
-      "path": "locations/china/shenzhen"
+      "path": "/locations/china/shenzhen"
     },
     {
       "region": "Asia - India",
@@ -366,7 +366,7 @@
       },
       "phone": "+91-120-4444711",
       "fax": "+91-120-4444737",
-      "path": "locations/india/noida"
+      "path": "/locations/india/noida"
     },
     {
       "region": "Asia - India",
@@ -380,7 +380,7 @@
       },
       "phone": "+91 120 444 4711",
       "fax": "+91 120 433 3427 or 433-3439",
-      "path": "locations/india/noida"
+      "path": "/locations/india/noida"
     },
     {
       "region": "Asia - India",
@@ -392,7 +392,7 @@
         "zip": "560103"
       },
       "phone": "+91 (80) 4193-9500",
-      "path": "locations/india/bangalore"
+      "path": "/locations/india/bangalore"
     },
     {
       "region": "Asia - India",
@@ -405,7 +405,7 @@
         "city": "Bangalore",
         "zip": "560087"
       },
-      "path": "locations/india/bangalore"
+      "path": "/locations/india/bangalore"
     },
     {
       "region": "Asia - India",
@@ -418,7 +418,7 @@
         "state": "Maharashtra",
         "zip": "400051"
       },
-      "path": "locations/india/mumbai"
+      "path": "/locations/india/mumbai"
     },
     {
       "region": "Asia - India",
@@ -430,7 +430,7 @@
         "city": "Gurgaon",
         "zip": "122002"
       },
-      "path": "locations/india/gurgaon"
+      "path": "/locations/india/gurgaon"
     },
     {
       "region": "Asia - India",
@@ -443,7 +443,7 @@
         "state": "Telangana",
         "zip": "500032"
       },
-      "path": "locations/india/nanakaramguda"
+      "path": "/locations/india/nanakaramguda"
     },
     {
       "region": "Asia - Japan",
@@ -457,7 +457,7 @@
         "zip": "141-0032"
       },
       "phone": "011-81-3-6739-9500",
-      "path": "locations/japan/tokyo"
+      "path": "/locations/japan/tokyo"
     },
     {
       "region": "Asia - Korea",
@@ -472,7 +472,7 @@
       },
       "phone": "+82 2 530 8000",
       "fax": "+82 2 530 8001",
-      "path": "locations/south-korea/seoul"
+      "path": "/locations/south-korea/seoul"
     },
     {
       "region": "Asia - Singapore",
@@ -485,7 +485,7 @@
       },
       "phone": "+65 6511 5500",
       "fax": "+65 6333 8023",
-      "path": "locations/singapore/singapore"
+      "path": "/locations/singapore/singapore"
     },
     {
       "region": "Asia - Thailand",
@@ -498,7 +498,7 @@
         "city": "Bangkok",
         "zip": "1330"
       },
-      "path": "locations/thailand/bangkok"
+      "path": "/locations/thailand/bangkok"
     },
     {
       "region": "Asia - Taiwan",
@@ -512,7 +512,7 @@
         "zip": "110016"
       },
       "phone": "+886 2 37257975",
-      "path": "locations/taiwan/taipei"
+      "path": "/locations/taiwan/taipei"
     },
     {
       "region": "New Zealand",
@@ -527,7 +527,7 @@
         "city": "Auckland",
         "zip": "1010"
       },
-      "path": "locations/new-zealand/auckland"
+      "path": "/locations/new-zealand/auckland"
     },
     {
       "region": "Australia",
@@ -542,7 +542,7 @@
       },
       "phone": "+61 2 9778 4100",
       "fax": "+61 2 9778 4190",
-      "path": "locations/australia/melbourne"
+      "path": "/locations/australia/melbourne"
     },
     {
       "region": "Australia",
@@ -557,7 +557,7 @@
       },
       "phone": "+61 2 9778 4100",
       "fax": "+61 2 9778 4190",
-      "path": "locations/australia/sydney"
+      "path": "/locations/australia/sydney"
     },
     {
       "region": "Australia",
@@ -570,7 +570,7 @@
         "state": "ACT",
         "zip": "2601"
       },
-      "path": "locations/australia/canberra"
+      "path": "/locations/australia/canberra"
     },
     {
       "region": "Europe, Middle East and Africa - Armenia",
@@ -582,7 +582,7 @@
         "city": "Yerevan",
         "zip": "0036"
       },
-      "path": "locations/armenia/yerevan"
+      "path": "/locations/armenia/yerevan"
     },
     {
       "region": "Europe, Middle East and Africa - Belgium",
@@ -593,7 +593,7 @@
         "city": "1B-1831 Diegem"
       },
       "phone": "+32 2 416 40 00",
-      "path": "locations/belgium/brussels"
+      "path": "/locations/belgium/brussels"
     },
     {
       "region": "Europe, Middle East and Africa - Denmark",
@@ -604,7 +604,7 @@
         "city": "2300 København"
       },
       "phone": "+45 3231 6000",
-      "path": "locations/denmark/kobenhavn"
+      "path": "/locations/denmark/kobenhavn"
     },
     {
       "region": "Europe, Middle East and Africa - France",
@@ -614,7 +614,7 @@
         "street": "94-96 Rue Lauriston",
         "city": "75016 Paris"
       },
-      "path": "locations/france/paris"
+      "path": "/locations/france/paris"
     },
     {
       "region": "Europe, Middle East and Africa - France",
@@ -624,7 +624,7 @@
         "street": "3 Avenue Julien",
         "city": "63000 Clermont-Ferrand"
       },
-      "path": "locations/france/clermont-ferrand"
+      "path": "/locations/france/clermont-ferrand"
     },
     {
       "region": "Europe, Middle East and Africa - France",
@@ -635,7 +635,7 @@
         "city": "Lyon",
         "zip": "69002"
       },
-      "path": "locations/france/lyon"
+      "path": "/locations/france/lyon"
     },
     {
       "region": "Europe, Middle East and Africa - Germany",
@@ -647,7 +647,7 @@
       },
       "phone": "+49 89 31 705 0",
       "fax": "+49 89 31 705 432",
-      "path": "locations/germany/munchen"
+      "path": "/locations/germany/munchen"
     },
     {
       "region": "Europe, Middle East and Africa - Germany",
@@ -657,7 +657,7 @@
         "street": "Ella-Trebe-Straße 3",
         "city": "10557 Berlin"
       },
-      "path": "locations/germany/berlin"
+      "path": "/locations/germany/berlin"
     },
     {
       "region": "Europe, Middle East and Africa - Germany",
@@ -669,7 +669,7 @@
       },
       "phone": "+49 40 306 36 0",
       "fax": "+49 40 306 36 333",
-      "path": "locations/germany/hamburg"
+      "path": "/locations/germany/hamburg"
     },
     {
       "region": "Europe, Middle East and Africa - Switzerland",
@@ -679,7 +679,7 @@
         "street": "Peter-Merian-Str. 80",
         "city": "4052 Basel"
       },
-      "path": "locations/switzerland/basel"
+      "path": "/locations/switzerland/basel"
     },
     {
       "region": "Europe, Middle East and Africa - Switzerland",
@@ -690,7 +690,7 @@
         "city": "CH-8050 Zürich"
       },
       "phone": "+41 44 307 1700",
-      "path": "locations/switzerland/zurich"
+      "path": "/locations/switzerland/zurich"
     },
     {
       "region": "Europe, Middle East and Africa - Ireland",
@@ -702,7 +702,7 @@
       },
       "phone": "+353 1 242 6700",
       "fax": "+353 1 242 6711",
-      "path": "locations/ireland/dublin"
+      "path": "/locations/ireland/dublin"
     },
     {
       "region": "Europe, Middle East and Africa - Italy",
@@ -715,7 +715,7 @@
       },
       "phone": "+39 039 6550.1",
       "fax": "+39 039 6550.50",
-      "path": "locations/italy/milan"
+      "path": "/locations/italy/milan"
     },
     {
       "region": "Europe, Middle East and Africa - Italy",
@@ -728,7 +728,7 @@
       },
       "phone": "+39 06 39870292",
       "fax": "+39 06 39870289",
-      "path": "locations/italy/rome"
+      "path": "/locations/italy/rome"
     },
     {
       "region": "Europe, Middle East and Africa - Netherlands",
@@ -740,7 +740,7 @@
         "city": "1076ED Amsterdam"
       },
       "phone": "+31 20 65 11 200",
-      "path": "locations/netherlands/amsterdam"
+      "path": "/locations/netherlands/amsterdam"
     },
     {
       "region": "Europe, Middle East and Africa - Netherlands",
@@ -750,7 +750,7 @@
         "street": "Vossenstraat 6",
         "city": "6811JL Arnhem"
       },
-      "path": "locations/netherlands/arnhem"
+      "path": "/locations/netherlands/arnhem"
     },
     {
       "region": "Europe, Middle East and Africa - Poland",
@@ -761,7 +761,7 @@
         "street": "39, Sienna Street, 8th floor",
         "city": "00-121 Warsaw"
       },
-      "path": "locations/poland/warsaw"
+      "path": "/locations/poland/warsaw"
     },
     {
       "region": "Europe, Middle East and Africa - Romania",
@@ -773,7 +773,7 @@
         "city": "Bucharest",
         "zip": "040215"
       },
-      "path": "locations/romania/bucharest"
+      "path": "/locations/romania/bucharest"
     },
     {
       "region": "Europe, Middle East and Africa - Saudi Arabia",
@@ -784,7 +784,7 @@
         "area": "Diplomatic Quarter",
         "city": "Riyadh"
       },
-      "path": "locations/saudi-arabia/riyadh"
+      "path": "/locations/saudi-arabia/riyadh"
     },
     {
       "region": "Europe, Middle East and Africa - South Africa",
@@ -798,7 +798,7 @@
       },
       "phone": "+27 (0)11 575 0008",
       "fax": "+27 (0)86 541 0842",
-      "path": "locations/south-africa/johannesburg"
+      "path": "/locations/south-africa/johannesburg"
     },
     {
       "region": "Europe, Middle East and Africa - Spain",
@@ -808,7 +808,7 @@
         "street": "Calle Llacuna 56-70",
         "city": "08005 Barcelona"
       },
-      "path": "locations/spain/barcelona"
+      "path": "/locations/spain/barcelona"
     },
     {
       "region": "Europe, Middle East and Africa - Spain",
@@ -819,7 +819,7 @@
         "street": "Paseo de la Castellana, 216",
         "city": "28046, Madrid"
       },
-      "path": "locations/spain/madrid"
+      "path": "/locations/spain/madrid"
     },
     {
       "region": "Europe, Middle East and Africa - Sweden",
@@ -832,7 +832,7 @@
       },
       "phone": "+46 8 752 3300",
       "fax": "+46 8 751 4955",
-      "path": "locations/sweden/stockholm"
+      "path": "/locations/sweden/stockholm"
     },
     {
       "region": "Europe, Middle East and Africa - United Kingdom",
@@ -846,7 +846,7 @@
       },
       "phone": "+44 1628 590 000",
       "fax": "+44 1628 590 100",
-      "path": "locations/united-kingdom/reading"
+      "path": "/locations/united-kingdom/reading"
     },
     {
       "region": "Europe, Middle East and Africa - United Kingdom",
@@ -858,7 +858,7 @@
         "city": "London",
         "zip": "EC1Y 8AF"
       },
-      "path": "locations/united-kingdom/london"
+      "path": "/locations/united-kingdom/london"
     },
     {
       "region": "Europe, Middle East and Africa - United Kingdom",
@@ -869,7 +869,7 @@
         "city": "EH11 4DF Scotland"
       },
       "phone": "+44(0)131-458-2602",
-      "path": "locations/united-kingdom/edinburgh"
+      "path": "/locations/united-kingdom/edinburgh"
     },
     {
       "region": "South America - Brazil",
@@ -884,7 +884,7 @@
       },
       "phone": "+55(11)2175-8495",
       "fax": "+55(11)2175-8401",
-      "path": "locations/brazil/sao-paulo"
+      "path": "/locations/brazil/sao-paulo"
     }
   ]
 }
