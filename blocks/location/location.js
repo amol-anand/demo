@@ -7,8 +7,8 @@ export default function decorate(block) {
   const container = document.createElement('div');
   container.className = 'location-container';
 
-  // Extract the heading (city and office type)
-  const heading = block.querySelector('h1');
+  // Extract the heading (city and office type) - could be h1, h2, or h3
+  const heading = block.querySelector('h1, h2, h3');
   if (heading) {
     heading.className = 'location-heading';
   }
@@ -17,50 +17,78 @@ export default function decorate(block) {
   const metaInfo = document.createElement('div');
   metaInfo.className = 'location-meta';
 
-  const paragraphs = [...block.querySelectorAll('p')];
-  paragraphs.forEach((p) => {
-    const text = p.textContent.trim();
-    if (text.startsWith('Region:') || text.startsWith('Country:')) {
-      metaInfo.append(p);
+  // Create sections for address, contact, and notes
+  const addressSection = document.createElement('div');
+  addressSection.className = 'location-address';
+
+  const contactSection = document.createElement('div');
+  contactSection.className = 'location-contact';
+
+  const notesSection = document.createElement('div');
+  notesSection.className = 'location-notes';
+
+  let inAddress = false;
+  let hasAddress = false;
+  let hasContact = false;
+  let hasNotes = false;
+
+  // Get the content wrapper
+  const content = block.querySelector(':scope > div > div');
+  if (!content) return;
+
+  // Process all children in order
+  const children = [...content.children];
+  children.forEach((child) => {
+    const text = child.textContent.trim();
+    const tagName = child.tagName.toLowerCase();
+
+    // Handle region and country metadata
+    if (tagName === 'p' && (text.startsWith('Region:') || text.startsWith('Country:'))) {
+      metaInfo.append(child.cloneNode(true));
+    } else if (tagName === 'h4' && text === 'Address') {
+      // Handle address heading
+      inAddress = true;
+      const addressHeading = child.cloneNode(true);
+      addressHeading.className = 'location-section-heading';
+      addressSection.append(addressHeading);
+      hasAddress = true;
+    } else if (inAddress && tagName === 'p' && !text.startsWith('Phone:') && !text.startsWith('Fax:')) {
+      // Handle address paragraphs (after Address heading until we hit phone/fax)
+      // Check if it's a note (italic text)
+      const em = child.querySelector('em');
+      if (em) {
+        inAddress = false;
+        notesSection.append(child.cloneNode(true));
+        hasNotes = true;
+      } else {
+        addressSection.append(child.cloneNode(true));
+      }
+    } else if (tagName === 'p' && (text.startsWith('Phone:') || text.startsWith('Fax:'))) {
+      // Handle phone and fax
+      inAddress = false;
+      const contactPara = child.cloneNode(true);
+      // Style phone links
+      const phoneLink = contactPara.querySelector('a[href^="tel:"]');
+      if (phoneLink) {
+        phoneLink.className = 'location-phone-link';
+      }
+      contactSection.append(contactPara);
+      hasContact = true;
+    } else if (tagName === 'p' && child.querySelector('em')) {
+      // Handle notes (italic paragraphs outside address)
+      notesSection.append(child.cloneNode(true));
+      hasNotes = true;
     }
   });
 
-  // Find and style the address section
-  const addressSection = block.querySelector('.location-address');
-  if (addressSection) {
-    const addressHeading = addressSection.querySelector('h2');
-    if (addressHeading) {
-      addressHeading.className = 'location-section-heading';
-    }
-  }
+  // Build the final structure
+  if (heading) container.append(heading);
+  if (metaInfo.children.length > 0) container.append(metaInfo);
+  if (hasAddress) container.append(addressSection);
+  if (hasContact) container.append(contactSection);
+  if (hasNotes) container.append(notesSection);
 
-  // Find and style the contact section
-  const contactSection = block.querySelector('.location-contact');
-  if (contactSection) {
-    // Add icons or styling for phone/fax if needed
-    const phoneLinks = contactSection.querySelectorAll('a[href^="tel:"]');
-    phoneLinks.forEach((link) => {
-      link.className = 'location-phone-link';
-    });
-  }
-
-  // Find and style the notes section
-  const notesSection = block.querySelector('.location-notes');
-  if (notesSection) {
-    // Notes are already styled with <em> in the template
-  }
-
-  // Reorganize the block structure
-  const content = block.querySelector(':scope > div > div');
-  if (content) {
-    if (heading) container.append(heading);
-    if (metaInfo && metaInfo.children.length > 0) container.append(metaInfo);
-    if (addressSection) container.append(addressSection);
-    if (contactSection) container.append(contactSection);
-    if (notesSection) container.append(notesSection);
-
-    // Replace block content with reorganized structure
-    block.textContent = '';
-    block.append(container);
-  }
+  // Replace block content with reorganized structure
+  block.textContent = '';
+  block.append(container);
 }
