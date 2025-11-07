@@ -251,11 +251,32 @@ async function loadSidekick() {
   });
 }
 
+/**
+ * Registers the service worker for PWA functionality
+ */
+function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').then((registration) => {
+        console.log('Service Worker registered successfully:', registration.scope);
+
+        // Check for updates periodically
+        setInterval(() => {
+          registration.update();
+        }, 60000); // Check every minute
+      }).catch((error) => {
+        console.error('Service Worker registration failed:', error);
+      });
+    });
+  }
+}
+
 async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
   loadSidekick();
+  registerServiceWorker();
 }
 
 loadPage();
