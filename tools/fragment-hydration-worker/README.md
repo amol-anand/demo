@@ -15,24 +15,40 @@ This worker intercepts HTML responses from your origin and:
 
 **Before (from origin):**
 ```html
-<div>
-  <a href="/fragments/header">Header</a>
-  <p>Page content here</p>
-  <a href="/fragments/footer">Footer</a>
+<div class="content-section">
+  <h3>Featured Products</h3>
+  <a href="/fragments/product-showcase">Product Showcase</a>
+</div>
+<div class="content">
+  <p>This is regular page content that is not affected.</p>
+</div>
+<div class="content-section">
+  <h3>What Our Customers Say</h3>
+  <a href="/fragments/testimonials">Customer Testimonials</a>
 </div>
 ```
 
 **After (delivered to browser):**
 ```html
-<div>
+<div class="content-section">
+  <h3>Featured Products</h3>
   <div class="fragment-hydrated" data-fragment-hydrated="true">
-    <header>
-      <nav>...</nav>
-    </header>
+    <div class="product-showcase">
+      <div class="product">...</div>
+      <div class="product">...</div>
+    </div>
   </div>
-  <p>Page content here</p>
+</div>
+<div class="content">
+  <p>This is regular page content that is not affected.</p>
+</div>
+<div class="content-section">
+  <h3>What Our Customers Say</h3>
   <div class="fragment-hydrated" data-fragment-hydrated="true">
-    <footer>...</footer>
+    <div class="testimonials">
+      <blockquote>...</blockquote>
+      <blockquote>...</blockquote>
+    </div>
   </div>
 </div>
 ```
@@ -187,19 +203,19 @@ For production use, consider:
 
 ```
 Browser Request
-    “
+    ï¿½
 Edge Worker
-    “
+    ï¿½
 Fetch Origin HTML
-    “
+    ï¿½
 Parse for Fragment Links
-    “
+    ï¿½
 Fetch Fragments in Parallel
-    “
+    ï¿½
 Replace Links with Content
-    “
+    ï¿½
 Return Hydrated HTML
-    “
+    ï¿½
 Browser (no client-side JS needed)
 ```
 
