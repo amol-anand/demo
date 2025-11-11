@@ -1,0 +1,22 @@
+# Cloudflare Workers configuration
+name = "fragment-hydration-worker"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# Routes - Update these to match your domain
+# Uncomment and configure when ready to deploy
+# routes = [
+#   { pattern = "example.com/*", zone_name = "example.com" }
+# ]
+
+# Environment variables (optional)
+[vars]
+FRAGMENT_PATH = "/fragments/"
+FRAGMENT_SUFFIX = ".plain.html"
+MAX_CONCURRENT_FETCHES = "10"
+FETCH_TIMEOUT = "5000"
+
+# KV namespace for caching (optional, for advanced caching)
+# [[kv_namespaces]]
+# binding = "FRAGMENT_CACHE"
+# id = "your-kv-namespace-id"

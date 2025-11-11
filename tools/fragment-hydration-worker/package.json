@@ -1,0 +1,24 @@
+{
+  "name": "fragment-hydration-worker",
+  "version": "1.0.0",
+  "description": "Generic edge worker for hydrating AEM fragment links in HTML responses",
+  "main": "worker.js",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "cloudflare-workers",
+    "edge-worker",
+    "fragment-hydration",
+    "aem",
+    "edge-delivery"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
