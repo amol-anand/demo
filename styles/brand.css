@@ -1,0 +1,22 @@
+:root {
+  --heading-font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --body-font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --background-color: #ffffff;
+  --text-color: #212121;
+  --link-color: #212121;
+  --link-hover-color: #005a87;
+  --section-padding: 48px 0;
+  --nav-height: 80px;
+
+  /* Lilly brand colors */
+  --color-lilly-red: #d0021b;
+  --color-lilly-teal: #00857c;
+  --color-lilly-dark-teal: #005a53;
+  --color-lilly-light-grey: #f9f9f9;
+  --color-lilly-mid-grey: #f0f0f0;
+  --color-lilly-border: #e0e0e0;
+  --color-lilly-dark: #212121;
+  --color-lilly-white: #ffffff;
+}
+
+html, body { overflow: auto !important; }
