@@ -1,0 +1,81 @@
+/* lifestyle-feature block */
+main .lifestyle-feature {
+  padding-block: 3rem;
+  padding-inline: 1.5rem;
+  background-color: var(--background-color);
+}
+
+main .lifestyle-feature > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+main .lifestyle-feature .lifestyle-feature-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+main .lifestyle-feature .lifestyle-feature-heading {
+  font-style: italic;
+  font-size: var(--heading-font-size-l);
+  color: #c8102e;
+  line-height: 1.2;
+  margin: 0;
+}
+
+main .lifestyle-feature .lifestyle-feature-subtext {
+  font-size: var(--body-font-size-xs);
+  color: var(--text-color);
+}
+
+main .lifestyle-feature .lifestyle-feature-subtext p {
+  margin: 0;
+}
+
+main .lifestyle-feature .lifestyle-feature-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+main .lifestyle-feature .lifestyle-feature-media picture {
+  display: block;
+  width: 100%;
+  max-width: 448px;
+}
+
+main .lifestyle-feature .lifestyle-feature-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+main .lifestyle-feature .lifestyle-feature-caption {
+  font-size: 0.75rem;
+  color: var(--text-color);
+  margin: 0;
+  align-self: flex-start;
+}
+
+@media (width >= 900px) {
+  main .lifestyle-feature > div {
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  main .lifestyle-feature .lifestyle-feature-text {
+    flex: 1;
+  }
+
+  main .lifestyle-feature .lifestyle-feature-media {
+    flex: 1;
+    align-items: flex-start;
+  }
+}
