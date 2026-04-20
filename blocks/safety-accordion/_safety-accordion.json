@@ -1,0 +1,55 @@
+{
+  "definitions": [
+    {
+      "title": "Safety Accordion",
+      "id": "safety-accordion",
+      "plugins": {
+        "da": {
+          "name": "safety-accordion",
+          "rows": 2,
+          "columns": 2
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "safety-accordion",
+      "fields": [
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "safety-title",
+          "value": "SAFETY SUMMARY",
+          "label": "Safety Summary Title",
+          "required": true
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "indications-title",
+          "value": "INDICATIONS",
+          "label": "Indications Title",
+          "required": true
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "safety-content",
+          "value": "",
+          "label": "Safety Summary Content",
+          "required": true
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "indications-content",
+          "value": "",
+          "label": "Indications Content",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
