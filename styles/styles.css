@@ -1,3 +1,5 @@
+@import url('brand.css');
+
 /*
  * Copyright 2020 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
@@ -12,16 +14,16 @@
 
 :root {
   /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --background-color: #ffffff;
+  --light-color: #f9f9f9;
+  --dark-color: #212121;
+  --text-color: #212121;
+  --link-color: #212121;
+  --link-hover-color: #005a87;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --heading-font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -37,9 +39,17 @@
   --heading-font-size-xs: 22px;
 
   /* nav heights */
-  --nav-height: 64px;
+  --nav-height: 80px;
   --breadcrumbs-height: 34px;
   --header-height: var(--nav-height);
+}
+
+/* global EDS button reset */
+main .button-container { display: inline; }
+main a.button:any-link {
+  background: none; border: none; border-radius: 0;
+  color: var(--link-color); font-size: inherit; font-weight: inherit;
+  padding: 0; margin: 0; text-decoration: underline; white-space: normal;
 }
 
 /* fallback fonts */
