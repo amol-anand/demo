@@ -1,0 +1,79 @@
+/* stats block */
+
+main .stats {
+  padding: 40px 0;
+}
+
+/* Header row */
+main .stats .stats-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+main .stats .stats-header p {
+  font-size: var(--heading-font-size-xs);
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 auto;
+  max-width: 800px;
+  line-height: 1.4;
+}
+
+/* Graphics row: stacked on mobile, side by side on desktop */
+main .stats .stats-graphics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+main .stats .stats-graphic-item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+main .stats .stats-graphic-item picture {
+  display: block;
+  width: 100%;
+}
+
+main .stats .stats-graphic-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Footnote row */
+main .stats .stats-footnote {
+  margin-top: 24px;
+}
+
+main .stats .stats-footnote p {
+  font-size: var(--body-font-size-xs);
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Desktop: stat graphics side by side */
+@media (width >= 900px) {
+  main .stats .stats-graphics {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  main .stats .stats-graphic-item {
+    flex: 1 1 0;
+    max-width: 500px;
+  }
+
+  main .stats .stats-header p {
+    font-size: var(--heading-font-size-s);
+  }
+}
