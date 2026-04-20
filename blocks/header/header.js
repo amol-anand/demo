@@ -185,6 +185,11 @@ export default async function decorate(block) {
   if (navSections) {
     navSections.querySelectorAll(':scope .nav-sections-wrapper > ul > li').forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+      // unwrap button-container p tags so li > a is direct
+      navSection.querySelectorAll(':scope > p.button-container').forEach((p) => {
+        while (p.firstChild) p.parentNode.insertBefore(p.firstChild, p);
+        p.remove();
+      });
       navSection.addEventListener('click', () => {
         if (isDesktop.matches) {
           const expanded = navSection.getAttribute('aria-expanded') === 'true';
