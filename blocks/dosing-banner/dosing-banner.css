@@ -1,0 +1,92 @@
+/*
+ * Dosing Banner Block
+ * Dark teal banner: heading left, CTA button right, footnote below.
+ */
+
+main .dosing-banner {
+  background-color: rgb(0 129 138);
+  border-radius: 20px;
+  color: #fff;
+  padding: 32px;
+  margin-inline: 16px;
+}
+
+/* Inner row: heading + CTA side by side */
+main .dosing-banner .dosing-banner-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+main .dosing-banner .dosing-banner-heading {
+  flex: 1 1 auto;
+}
+
+main .dosing-banner .dosing-banner-heading h2 {
+  color: #fff;
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.25;
+}
+
+main .dosing-banner .dosing-banner-cta {
+  flex: 0 0 auto;
+}
+
+/* CTA button  olive/yellow-green, dark text */
+main .dosing-banner .dosing-banner-btn:any-link {
+  display: inline-block;
+  background-color: rgb(169 194 63);
+  color: rgb(33 33 33);
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  padding: 8px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+main .dosing-banner .dosing-banner-btn:hover {
+  background-color: rgb(148 171 50);
+  text-decoration: none;
+}
+
+/* Footnote  full-width, smaller text */
+main .dosing-banner .dosing-banner-footnote {
+  margin-top: 16px;
+  font-size: var(--body-font-size-xs);
+  color: #fff;
+}
+
+main .dosing-banner .dosing-banner-footnote p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Desktop: heading and CTA side by side */
+@media (width >= 600px) {
+  main .dosing-banner .dosing-banner-inner {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  main .dosing-banner .dosing-banner-heading {
+    flex: 1 1 0;
+  }
+}
+
+@media (width >= 900px) {
+  main .dosing-banner {
+    margin-inline: 32px;
+  }
+
+  main .dosing-banner .dosing-banner-heading h2 {
+    font-size: var(--heading-font-size-m);
+  }
+
+  main .dosing-banner .dosing-banner-btn:any-link {
+    font-size: var(--body-font-size-xs);
+  }
+}
