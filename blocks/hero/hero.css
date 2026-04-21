@@ -139,6 +139,27 @@
 }
 
 /* ============================================================
+   Variants: left (default) and right
+   Usage in DA: "Hero (left)" or "Hero (right)"
+   ============================================================ */
+
+/* Left  content overlay on the left side (default) */
+.hero.left .hero-content,
+.hero:not(.right) .hero-content {
+  align-items: flex-start;
+}
+
+/* Right  content overlay on the right side */
+.hero.right .hero-content {
+  align-items: flex-end;
+  margin-left: auto;
+}
+
+.hero.right .hero-bg img {
+  object-position: left center;
+}
+
+/* ============================================================
    Responsive
    ============================================================ */
 @media (width >= 900px) {
