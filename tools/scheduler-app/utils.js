@@ -104,7 +104,7 @@ export async function fetchUserEmail(org, site) {
     const resp = await fetch(`${ADMIN}/profile/${org}/${site}`);
     if (!resp.ok) return '';
     const json = await resp.json();
-    return json.email || '';
+    return json.profile?.email || '';
   } catch {
     return '';
   }
