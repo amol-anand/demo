@@ -12,6 +12,54 @@ const manageBtn = document.getElementById('manage-btn');
 
 const { org, site, path } = api.parseSidekickParams(window.location.search);
 
+let cachedUserEmail = '';
+
+async function fetchUserEmailFromSidekick() {
+  return new Promise((resolve) => {
+    let timeoutId;
+
+    const handler = (event) => {
+      const profile = event.data?.status?.profile
+        || event.data?.detail?.profile
+        || event.data?.profile;
+      if (profile?.email) {
+        clearTimeout(timeoutId);
+        window.removeEventListener('message', handler);
+        resolve(profile.email);
+      }
+    };
+
+    timeoutId = setTimeout(() => {
+      window.removeEventListener('message', handler);
+      resolve('');
+    }, 3000);
+
+    window.addEventListener('message', handler);
+
+    if (window.parent !== window) {
+      window.parent.postMessage({ action: 'getStatus' }, '*');
+    }
+  });
+}
+
+async function getUserEmail() {
+  if (cachedUserEmail) {
+    return cachedUserEmail;
+  }
+
+  let email = await api.fetchUserEmail(org, site);
+
+  if (!email) {
+    email = await fetchUserEmailFromSidekick();
+  }
+
+  if (email) {
+    cachedUserEmail = email;
+  }
+
+  return email;
+}
+
 function setStatus(message, kind = 'info') {
   statusText.textContent = message || '';
   if (message) {
@@ -33,6 +81,13 @@ function autoClose() {
 
 async function handleSchedule() {
   setStatus('');
+  setStatus('Fetching user profile…');
+  const userId = await getUserEmail();
+  if (!userId) {
+    setStatus('Could not get user profile. Please ensure you are signed in via the Sidekick.', 'warning');
+    return;
+  }
+
   if (!api.isAtLeastFiveMinAhead(timeInput.value)) {
     setStatus('Pick a date/time at least 5 minutes in the future.', 'warning');
     return;
@@ -48,7 +103,6 @@ async function handleSchedule() {
   }
 
   setStatus('Scheduling…');
-  const userId = await api.fetchUserEmail(org, site);
   const scheduledPublish = new Date(timeInput.value).toISOString();
   const result = await api.schedulePage({
     org, site, path, userId, scheduledPublish,
@@ -74,7 +128,7 @@ function handleManage() {
   window.open(manageUrl.toString(), '_blank', 'width=900,height=600');
 }
 
-function initContext() {
+async function initContext() {
   if (!org || !site || !path) {
     formWrap.hidden = true;
     missingContext.hidden = false;
@@ -83,6 +137,8 @@ function initContext() {
   pathValue.textContent = path;
   siteValue.textContent = `${org}/${site}`;
   timezoneLabel.textContent = `(${Intl.DateTimeFormat().resolvedOptions().timeZone})`;
+
+  getUserEmail();
 }
 
 timeInput.addEventListener('input', () => {
