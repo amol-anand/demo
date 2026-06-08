@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule Publish</title>
+  <link rel="stylesheet" href="schedule.css">
+</head>
+<body class="schedule">
+  <main>
+    <div id="missing-context" hidden>
+      <p>Open this from the AEM Sidekick to schedule the current page.</p>
+    </div>
+
+    <div id="schedule-form-wrap">
+      <div id="schedule-card">
+        <h2>Schedule publish</h2>
+
+        <p class="target-path">
+          <span class="label">Page</span>
+          <span class="value" id="target-path-value"></span>
+        </p>
+        <p class="target-site">
+          <span class="label">Site</span>
+          <span class="value" id="target-site-value"></span>
+        </p>
+
+        <label id="schedule-time-label">
+          Publish at
+          <span class="timezone" id="schedule-timezone"></span>
+        </label>
+        <input type="datetime-local" id="schedule-time">
+
+        <p class="status-text" id="status-text"></p>
+
+        <p class="button-wrapper">
+          <button type="button" id="manage-btn" class="button outline">Manage</button>
+          <button type="button" id="schedule-btn" class="button primary" disabled>Schedule</button>
+        </p>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="schedule.js"></script>
+</body>
+</html>

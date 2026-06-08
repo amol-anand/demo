@@ -1,0 +1,163 @@
+:root {
+  --color-text: #2c2c2c;
+  --color-font-grey: #6e6e6e;
+  --color-border: #e0e0e0;
+  --color-link: #1473e6;
+  --layer-elevated: #fff;
+  --red-900: #c9252d;
+  --green-900: #107c10;
+  --blue-900: #1473e6;
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --body-size-s: 14px;
+  --body-size-xs: 12px;
+  --heading-size-s: 18px;
+  --code-font-family: 'Source Code Pro', monaco, consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: var(--body-size-s);
+  color: var(--color-text);
+  background: var(--layer-elevated);
+}
+
+.schedule {
+  margin: 0;
+  font-size: var(--body-size-s);
+}
+
+.schedule main {
+  padding: var(--spacing-m);
+}
+
+.schedule #schedule-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+}
+
+.schedule h2 {
+  margin: 0;
+  font-size: var(--heading-size-s);
+}
+
+.schedule .target-path,
+.schedule .target-site {
+  margin: 0;
+  display: flex;
+  gap: var(--spacing-xs);
+  align-items: baseline;
+}
+
+.schedule .label {
+  font-weight: 600;
+  color: var(--color-font-grey);
+  min-width: 3em;
+  font-size: var(--body-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.schedule .value {
+  word-break: break-all;
+  font-family: var(--code-font-family);
+}
+
+.schedule #schedule-time-label {
+  display: block;
+  margin-top: var(--spacing-xs);
+  font-weight: 600;
+}
+
+.schedule .timezone {
+  font-weight: 400;
+  color: var(--color-font-grey);
+  margin-left: var(--spacing-xs);
+}
+
+.schedule #schedule-time {
+  width: 100%;
+  margin-top: var(--spacing-xs);
+  padding: 0.4em 0.6em;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--layer-elevated);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.schedule .status-text {
+  margin: 0;
+  min-height: 1.2em;
+  font-style: italic;
+  font-size: var(--body-size-xs);
+  color: var(--color-font-grey);
+}
+
+.schedule .status-text[data-kind='warning'] {
+  color: var(--red-900);
+  font-style: normal;
+}
+
+.schedule .status-text[data-kind='success'] {
+  color: var(--green-900);
+  font-style: normal;
+}
+
+.schedule .button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-s);
+  margin: 0;
+}
+
+.schedule .button {
+  padding: 8px 16px;
+  font-size: var(--body-size-s);
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  background: var(--layer-elevated);
+  color: var(--color-text);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.schedule .button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.schedule .button:hover:not(:disabled) {
+  background: #f5f5f5;
+}
+
+.schedule .button.primary {
+  background: var(--blue-900);
+  border-color: var(--blue-900);
+  color: #fff;
+}
+
+.schedule .button.primary:hover:not(:disabled) {
+  background: #0d66d0;
+  border-color: #0d66d0;
+}
+
+.schedule .button.outline {
+  background: transparent;
+  border-color: var(--color-border);
+}
+
+.schedule #missing-context p {
+  margin: 0;
+  color: var(--color-font-grey);
+}

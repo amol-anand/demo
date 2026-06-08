@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scheduler</title>
+  <link rel="stylesheet" href="scheduler.css">
+</head>
+<body class="scheduler">
+  <main>
+    <header>
+      <h1>Scheduler</h1>
+      <p>View and manage scheduled publishes for pages and snapshots.</p>
+    </header>
+
+    <section id="site-form-section">
+      <form id="site-form">
+        <div class="config-field">
+          <div class="field">
+            <label for="org">Organization</label>
+            <input type="text" id="org" name="org" placeholder="e.g. adobe" required>
+          </div>
+          <div class="field">
+            <label for="site">Site</label>
+            <input type="text" id="site" name="site" placeholder="e.g. blog" required>
+          </div>
+        </div>
+        <div class="button-wrapper">
+          <button type="submit" class="button primary">Load schedule</button>
+          <button type="button" id="reset" class="button outline">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="status-container" aria-hidden="true">
+      <div id="status-card">
+        <p class="status-text"></p>
+        <div class="button-wrapper">
+          <button type="button" id="refresh" class="button outline" hidden>Refresh schedule</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule-container" aria-hidden="true">
+      <h2>Scheduled items</h2>
+      <div id="schedule-list" role="table" aria-label="Scheduled items">
+        <div class="schedule-row schedule-header" role="row">
+          <span role="columnheader">Type</span>
+          <span role="columnheader">Item</span>
+          <span role="columnheader">Publishes on</span>
+          <span role="columnheader">Requested by</span>
+          <span role="columnheader">Actions</span>
+        </div>
+      </div>
+    </section>
+
+    <dialog id="confirm-dialog" class="confirm-dialog">
+      <h3>Delete scheduled item?</h3>
+      <p id="confirm-message"></p>
+      <div class="confirm-actions">
+        <button type="button" class="button outline" value="cancel">Cancel</button>
+        <button type="button" id="confirm-ok" class="button primary" value="confirm">Delete</button>
+      </div>
+    </dialog>
+  </main>
+  <script type="module" src="scheduler.js"></script>
+</body>
+</html>
