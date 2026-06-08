@@ -89,6 +89,16 @@
       "url": "https://main--da-block-collection--aemsites.hlx.live/tools/demo/demo.html"
     },
     {
+      "id": "schedule-publish",
+      "title": "Schedule Publish",
+      "environments": ["edit", "preview"],
+      "url": "/tools/scheduler-app/schedule.html",
+      "isPopover": true,
+      "popoverRect": "width: 400px; height: 320px",
+      "passReferrer": true,
+      "passConfig": true
+    },
+    {
       "id": "experimentation",
       "titleI18n": { "en": "Experimentation" },
       "environments": [ "dev", "preview" ],
